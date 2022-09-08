@@ -1,0 +1,42 @@
+{
+  "name": "native-lodash",
+  "version": "1.0.0",
+  "description": "常用的轻量原生js工具库",
+  "main": "index.js",
+  "scripts": {
+    "cz": "czg",
+    "clean": "pnpm store prune",
+    "lint:staged": "nano-staged",
+    "prepare": "husky install",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "javascript",
+    "lodash",
+    "utilities"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
+    "cz-git": "^1.3.11",
+    "eslint": "^8.23.0",
+    "eslint-config-prettier": "^8.5.0",
+    "husky": "^8.0.1",
+    "nano-staged": "^0.8.0",
+    "prettier": "^2.7.1",
+    "typescript": "^4.8.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
+  },
+  "nano-staged": {
+    "*.{js,ts}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  }
+}
