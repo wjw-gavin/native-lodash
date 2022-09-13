@@ -1,4 +1,5 @@
 /**
+ * @description 全局唯一标识
  * @param {Number} len uuid的长度
  * @param {Boolean} firstU 将返回的首字母置为"u"
  * @param {Nubmer} radix 生成uuid的基数(意味着返回的字符串都是这个基数),2-二进制,8-八进制,10-十进制,16-十六进制
