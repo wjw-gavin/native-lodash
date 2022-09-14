@@ -74,9 +74,4 @@ const loading = {
   }
 
   console.log(`\n🎉 ${chalk.green('npm发布成功!!')} `)
-  console.log(
-    `\n👉 输入命令 ${chalk.green(
-      `npm install -S ${pkgName}`
-    )} 更新至最新版本 ${chalk.yellow(`v${newVersion}`)} \n`
-  )
 })()
