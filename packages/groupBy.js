@@ -1,4 +1,3 @@
-// groupBy,对数组根据某个字段分类
 /**
  * @description 对象数组根据某个字段分类，常用于 index 索引列表
  * @param {Array} array 必须是对象数组

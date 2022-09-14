@@ -1,6 +1,7 @@
 export * from './cloneDeep'
 export * from './debounce'
 export * from './flattenDeep'
+export * from './groupBy'
 export * from './guid'
 export * from './has'
 export * from './moneyFormat'

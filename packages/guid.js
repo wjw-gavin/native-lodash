@@ -1,11 +1,11 @@
 /**
  * @description 全局唯一标识
  * @param {Number} len uuid的长度
- * @param {Boolean} firstU 将返回的首字母置为"u"
- * @param {Nubmer} radix 生成uuid的基数(意味着返回的字符串都是这个基数),2-二进制,8-八进制,10-十进制,16-十六进制
+ * @param {Boolean} firstLetter 将首位设置为某个字母，默认为 u
+ * @param {Nubmer} radix 生成uuid的基数(意味着返回的字符串都是这个基数),2-二进制,8-八进制,10-十进制,16-十六进制,默认62
  */
 
-export function guid(len = 32, firstU = true, radix = null) {
+export function guid(len = 32, firstLetter = 'u', radix = null) {
   const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split('')
   const uuid = []
   radix = radix || chars.length
@@ -26,10 +26,10 @@ export function guid(len = 32, firstU = true, radix = null) {
       }
     }
   }
-  // 移除第一个字符,并用u替代,因为第一个字符为数值时,该guuid不能用作id或者class
-  if (firstU) {
+  // 移除第一个字符,并用字母替代,因为第一个字符为数值时,该guuid不能用作id或者class
+  if (firstLetter) {
     uuid.shift()
-    return `u${uuid.join('')}`
+    return `${firstLetter}${uuid.join('')}`
   }
   return uuid.join('')
 }
