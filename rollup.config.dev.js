@@ -10,7 +10,7 @@ export default defineConfig({
   plugins: [
     ...baseConfig.plugins,
     dev({
-      port: '6666',
+      port: '4000',
       host: 'localhost'
     }),
     livereload('packages')
