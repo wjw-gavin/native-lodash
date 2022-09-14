@@ -64,7 +64,7 @@ const loading = {
         'HEAD'
       ])
       await execa('git', ['add', 'package.json'])
-      await execa('git', ['commit', '-m', `feat: 版本号修改为：${newVersion}`])
+      await execa('git', ['commit', '-m', `release: ${newVersion}`])
       await execa('git', ['push', 'origin', branchName])
     } catch (err) {
       console.log(err.stdout)

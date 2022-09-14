@@ -1,10 +1,10 @@
 {
   "name": "native-lodash",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "Gavin",
   "license": "ISC",
   "description": "常用的原生js工具库",
-  "main": "./dist/index.umd.js",
+  "main": "./dist/index.min.js",
   "module": "./dist/index.es.js",
   "homepage": "https://github.com/wjw-gavin/native-lodash",
   "scripts": {
@@ -35,8 +35,8 @@
     "cz-git": "^1.3.11",
     "eslint": "^8.23.0",
     "eslint-config-prettier": "^8.5.0",
-    "husky": "^8.0.1",
     "execa": "^5.1.1",
+    "husky": "^8.0.1",
     "inquirer": "^6.5.2",
     "nano-staged": "^0.8.0",
     "ora": "^5.4.1",

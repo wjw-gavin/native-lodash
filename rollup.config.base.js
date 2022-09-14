@@ -18,14 +18,13 @@ export default defineConfig({
       format: 'umd',
       // name: pkg.name,
       name: 'nativeLodash',
-      // 方便出现问题定位调试
-      sourcemap: true
+      sourcemap: false
     },
     {
       file: resolve('./', pkg.module),
       format: 'es',
       name: pkg.name,
-      sourcemap: true
+      sourcemap: false
     }
   ],
   plugins: [
