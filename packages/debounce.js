@@ -4,7 +4,7 @@
 
 export const debounce = (fn, ms = 0) => {
   let timer
-  return (...args) => {
+  return function (...args) {
     if (timer) clearTimeout(timer)
     timer = setTimeout(() => fn.apply(this, args), ms)
   }
