@@ -6,7 +6,7 @@ import path from 'path'
 
 import pkg from './package.json'
 
-const extensions = ['.js', '.ts']
+const extensions = ['.js']
 
 const resolve = (...args) => path.resolve(__dirname, ...args)
 

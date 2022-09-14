@@ -5,8 +5,6 @@ import { defineConfig } from 'rollup'
 
 import pkg from './package.json'
 
-const extensions = ['.js', '.ts']
-
 export default defineConfig({
   ...baseConfig,
   plugins: [...baseConfig.plugins, filesize(), terser()]
