@@ -1,8 +1,9 @@
 src
 docs
 test
+coverage
 examples
-__test__
+tests
 .editorconfig
 .eslintignore
 .eslintrc.js

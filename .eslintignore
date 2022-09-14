@@ -1,6 +1,7 @@
 
 *.sh
 node_modules
+coverage
 *.md
 *.woff
 *.ttf
