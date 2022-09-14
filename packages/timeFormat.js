@@ -1,4 +1,4 @@
-import test from './test'
+import { test } from './test'
 
 /**
  * @description 格式化时间
