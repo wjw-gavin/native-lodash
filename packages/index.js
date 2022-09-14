@@ -1,6 +1,5 @@
 export * from './cloneDeep'
 export * from './debounce'
-export * from './difference'
 export * from './flattenDeep'
 export * from './guid'
 export * from './has'
