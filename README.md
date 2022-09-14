@@ -32,3 +32,9 @@ const arrObj = [{ a: 'a' }, [{ b: 'b' }, { c: 'c' }, [{ d: 'd' }]], [{ e: 'e' }]
 console.log(flattenDeep(arrObj))
 // =>  [{ a: 'a' }, { b: 'b' }, { c: 'c' }, { d: 'd' }, { e: 'e' }]
 ```
+
+### 参考
+
+[lodash](https://lodash.com/)   
+[uview](https://www.uviewui.com)
+
