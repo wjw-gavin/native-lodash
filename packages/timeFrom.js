@@ -1,4 +1,4 @@
-import timeFormat from './timeFormat'
+import { timeFormat } from './timeFormat'
 
 /**
  * @description 时间戳转为多久之前

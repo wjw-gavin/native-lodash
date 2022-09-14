@@ -1,4 +1,4 @@
-import isString from './isString'
+import test from './test'
 
 /**
  * @description 格式化时间
@@ -16,7 +16,7 @@ export function timeFormat(timestamp = null, formatStr = 'yyyy-mm-dd') {
   }
 
   // 若用户传入字符串格式时间戳，new Date无法解析，需做兼容
-  else if (isString(timestamp)) {
+  else if (test.string(timestamp)) {
     date = new Date(Number(timestamp))
   }
 
