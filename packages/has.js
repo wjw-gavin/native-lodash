@@ -12,6 +12,8 @@
  * output: true
  */
 
+const hasOwnProperty = Object.prototype.hasOwnProperty
+
 export const has = (obj, key) => {
   const keyParts = key.split('.')
 
