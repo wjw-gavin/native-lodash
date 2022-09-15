@@ -1,7 +1,6 @@
 import nodeResolve from '@rollup/plugin-node-resolve'
 import babel from '@rollup/plugin-babel'
 import { defineConfig } from 'rollup'
-import dev from 'rollup-plugin-dev'
 import path from 'path'
 
 import pkg from './package.json'
