@@ -11,6 +11,7 @@ test('检查一个对象中是否包含某个key', () => {
       }
     }
   }
+
   expect(has(obj, 'a')).toBeTruthy()
   expect(has(obj, 'c.d')).toBeTruthy()
   expect(has(obj, 'x.y.z')).toBeTruthy()
