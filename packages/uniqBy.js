@@ -1,4 +1,4 @@
-import { test } from 'test'
+import { test } from './test'
 /**
  * @description 调用数组的每个元素以产生唯一性
  * @param {Array} arr 要去重的数组
