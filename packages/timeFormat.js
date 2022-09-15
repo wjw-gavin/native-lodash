@@ -16,7 +16,7 @@ export function timeFormat(timestamp = null, formatStr = 'yyyy-mm-dd') {
   }
 
   // 若用户传入字符串格式时间戳，new Date无法解析，需做兼容
-  else if (test.string(timestamp)) {
+  else if (test.isString(timestamp)) {
     date = new Date(Number(timestamp))
   }
 

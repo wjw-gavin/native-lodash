@@ -37,4 +37,6 @@ export function isEqual(value, other) {
       return false
     }
   }
+
+  return true
 }

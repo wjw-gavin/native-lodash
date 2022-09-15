@@ -1,17 +1,18 @@
+import { round } from './utils/digit.js'
+
 /**
- * @description 数字格式化
+ * @description 金额格式化
  * @param {number|string} number 要格式化的数字
  * @param {number} decimals 保留几位小数
- * @param {string} decimalPoint 小数点符号
- * @param {string} thousandsSeparator 千分位符号
  * @returns {string} 格式化后的数字
+ * https://github.com/umicro/uView2.0/blob/master/uni_modules/uview-ui/libs/function/digit.js
  */
 
-export function moneyFormat(number, decimals = 0, thousandsSeparator = ',') {
+export function moneyFormat(number, decimals = 0) {
   number = `${number}`.replace(/[^0-9+-Ee.]/g, '')
   const n = !isFinite(+number) ? 0 : +number
   const prec = !isFinite(+decimals) ? 0 : Math.abs(decimals)
-  const sep = typeof thousandsSeparator === 'undefined' ? ',' : thousandsSeparator
+  const sep = ','
   const dec = '.'
   let s = ''
 

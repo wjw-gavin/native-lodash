@@ -26,7 +26,7 @@ export function omit(obj, props) {
   const keys = Object.keys(obj)
   const res = {}
 
-  for (const i = 0; i < keys.length; i++) {
+  for (let i = 0; i < keys.length; i++) {
     const key = keys[i]
     const val = obj[key]
 

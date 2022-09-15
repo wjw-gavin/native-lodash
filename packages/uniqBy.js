@@ -7,6 +7,8 @@ import { test } from './test'
  */
 
 export function uniqBy(arr, it) {
+  if (!it) return [...new Set(arr)]
+
   const iteratee = test.isString(it) ? (val) => val[it] : it
 
   return arr.reduce((pre, cur) => {
