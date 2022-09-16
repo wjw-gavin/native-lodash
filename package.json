@@ -1,6 +1,6 @@
 {
   "name": "native-lodash",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "author": "Gavin",
   "license": "ISC",
   "description": "常用的原生js工具库",
