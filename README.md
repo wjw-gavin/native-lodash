@@ -1,6 +1,5 @@
 # 说明
-一些常用的 `js` 工具库，避免在多个项目中重复维护。
-
+一些常用的`js`工具库，避免在多个项目中来回拷贝。
 ## 安装使用
 方式1: 通过 CDN 引入
 ```html
@@ -8,10 +7,18 @@
 
 <script>
   console.log(nativeLodash)
+
+  // 手机号脱敏
+  const mobile = '18688888888'
+  console.log(nativeLodash.desensitize(mobile))
+  // => 186****8888
   
-  const arr = [1, [[2], [3, [4]], 5]]
-  console.log(nativeLodash.flattenDeep(arr))
-  // => [1, 2, 3, 4, 5]
+  // 金额格式化
+  const money = 3002.345
+  console.log(nativeLodash.moneyFormat(money))
+  // => '3,002'
+  console.log(nativeLodash.moneyFormat(money, 2))
+  // => '3,002.25'
 </script>
 ```
 方式2: 通过 npm 安装
@@ -26,15 +33,20 @@ yarn add native-lodash
 pnpm add native-lodash
 
 // 使用
-import { flattenDeep } from 'native-lodash'
+import { desensitize, moneyFormat } from 'native-lodash'
 
-const arrObj = [{ a: 'a' }, [{ b: 'b' }, { c: 'c' }, [{ d: 'd' }]], [{ e: 'e' }]]
-console.log(flattenDeep(arrObj))
-// =>  [{ a: 'a' }, { b: 'b' }, { c: 'c' }, { d: 'd' }, { e: 'e' }]
+// 手机号脱敏
+const mobile = '18688888888'
+console.log(desensitize(mobile))
+// => 186****8888
+
+// 金额格式化
+const money = 3002.345
+console.log(moneyFormat(money))
+// => '3,002'
+console.log(moneyFormat(money, 2))
+// => '3,002.25'
 ```
-
 ### 参考
-
-[lodash](https://lodash.com/)   
+[lodash](https://lodash.com)
 [uview](https://www.uviewui.com)
-
