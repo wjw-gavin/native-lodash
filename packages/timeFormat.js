@@ -15,6 +15,11 @@ export function timeFormat(timestamp = null, formatStr = 'yyyy-mm-dd') {
     date = new Date()
   }
 
+  // 若为unix秒时间戳，则转为毫秒时间戳
+  else if (/^\d{10}$/.test(timestamp?.toString().trim())) {
+    date = new Date(timestamp * 1000)
+  }
+
   // 若用户传入字符串格式时间戳，new Date无法解析，需做兼容
   else if (test.isString(timestamp)) {
     date = new Date(Number(timestamp))
