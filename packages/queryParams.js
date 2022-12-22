@@ -45,10 +45,6 @@ export function queryParams(data = {}, isPrefix = true, arrayFormat = 'brackets'
           })
           _result.push(`${key}=${commaStr}`)
           break
-        default:
-          value.forEach((_value) => {
-            _result.push(`${key}[]=${_value}`)
-          })
       }
     } else {
       _result.push(`${key}=${value}`)
