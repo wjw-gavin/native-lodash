@@ -57,6 +57,25 @@ console.log(moneyFormat(money, 2))
 
 1. [cloneDeep](#clonedeep)
 1. [debounce](#debounce)
+1. [delay](#delay)
+1. [desensitize](#desensitize)
+1. [download](#download)
+1. [eq](#eq)
+1. [flattenDeep](#flattendeep)
+1. [groupBy](#groupby)
+1. [guid](#guid)
+1. [has](#has)
+1. [isEqual](#isequal)
+1. [moneyFormat](#moneyformat)
+1. [omit](#omit)
+1. [queryParams](#queryparams)
+1. [test](#test)
+1. [throttle](#throttle)
+1. [timeFormat](#timeformat)
+1. [timeFrom](#timefrom)
+1. [toFixed](#tofixed)
+1. [trim](#trim)
+
 
 ### cloneDeep
 ```js
