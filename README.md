@@ -1,7 +1,11 @@
 # 说明
+
 一些常用的`js`工具库，避免在多个项目中来回拷贝。
+
 # 安装使用
+
 方式1: 通过 CDN 引入
+
 ```html
 <script src="https://cdn.jsdelivr.net/npm/native-lodash/dist/index.min.js"></script>
 
@@ -21,7 +25,9 @@
   // => '3,002.25'
 </script>
 ```
+
 方式2: 通过 npm | yarn | pnpm 安装
+
 ```js
 // npm
 npm install native-lodash
@@ -49,8 +55,9 @@ console.log(moneyFormat(money, 2))
 ```
 # 使用文档
 
-1. [cloneDeep](#lB9L3)
-2. [debounce](#ahWRv)
+1. [cloneDeep](#clonedeep)
+1. [debounce](#debounce)
+
 ### cloneDeep
 ```js
 /**
