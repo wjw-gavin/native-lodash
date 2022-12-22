@@ -1,7 +1,7 @@
 import { guid } from '../packages'
 
 describe('全局唯一标识符', () => {
-  test('10为长度', () => {
+  test('长度为12', () => {
     expect(guid(12).length === 12).toBeTruthy()
   })
 
