@@ -13,6 +13,7 @@ tests
 commitlint.config.js
 npmpublish.js
 pnpm-lock.json
+pnpm-lock.yaml
 pnpm-workspace.yaml
 rollup.config.base.js
 rollup.config.build.js
