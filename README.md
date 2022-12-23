@@ -500,7 +500,7 @@ trim(' 12 12 ', 'all')
 /**
  * @description 调用数组的每个元素以产生唯一性
  * @param {Array} arr 要去重的数组
- * @param {*} it 迭代函数，调用每个元素
+ * @param {*} it 迭代函数要调用的元素
  * @returns {Array} 返回新的去重后的数组
  */
 
