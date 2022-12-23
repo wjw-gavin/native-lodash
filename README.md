@@ -75,6 +75,7 @@ console.log(moneyFormat(money, 2))
 1. [timeFrom](#timefrom)
 1. [toFixed](#tofixed)
 1. [trim](#trim)
+1. [uniqBy](#uniqby)
 
 
 ### cloneDeep
@@ -84,6 +85,20 @@ console.log(moneyFormat(money, 2))
  * @param {object} obj 需要深度克隆的对象
  * @returns {*} 克隆后的对象或者原值
  */
+
+// 使用
+import { cloneDeep } from 'native-lodash'
+
+const obj = { name: 'Gavin' }
+const cloneObj = obj
+cloneObj.name = 'wjw'
+obj === cloneObj // => true
+
+
+const cloneDeepObj = cloneDeep(obj)
+cloneDeepObj.name = 'wjw'
+obj === cloneDeepObj  // => false
+
 ```
 ### debounce
 ```js
@@ -478,6 +493,39 @@ trim(' 12 12 ', 'right')
 
 trim(' 12 12 ', 'all')
 // => '1212'
+```
+
+### uniqBy
+```js
+/**
+ * @description 调用数组的每个元素以产生唯一性
+ * @param {Array} arr 要去重的数组
+ * @param {*} it 迭代函数，调用每个元素
+ * @returns {Array} 返回新的去重后的数组
+ */
+
+// 使用
+import { uniqBy } from 'native-lodash'
+
+// 数组元素为基本类型去重
+uniqBy([1, 3, 4, 5, 5, 4])
+// => [1, 3, 4, 5]
+
+const arr = [
+  { id: 1, name: 'cat' },
+  { id: 2, name: 'dog' },
+  { id: 3, name: 'tiger' },
+  { id: 1, name: 'sheep' }
+]
+
+// 数组元素为对象去重
+uniqBy(arr, 'id')
+// => 
+  // [
+  //   { id: 1, name: 'cat' },
+  //   { id: 2, name: 'dog' },
+  //   { id: 3, name: 'tiger' }
+  // ]
 ```
 
 # 参考
