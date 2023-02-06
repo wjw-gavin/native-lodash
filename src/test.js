@@ -16,7 +16,7 @@ function isEmail(value) {
  */
 function isMobile(value) {
   const reg = /^1[3-9]\d{9}$/
-  return reg.test(str.toString())
+  return reg.test(String(value))
 }
 
 /**
