@@ -150,10 +150,15 @@ desensitize(mobile, 1, 1)
 ### download
 ```js
 /**
- * @description: 根据网络链接地址下载文件
+ * @description: 根据链接地址使用 a 标签下载文件
  * @param {String} href  下载链接
  * @param {String} title 文件名称
  */
+
+// 使用
+import { download } from 'native-lodash'
+
+download(href, title)
 ```
 ### eq
 ```js
