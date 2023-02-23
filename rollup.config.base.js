@@ -10,7 +10,7 @@ const extensions = ['.js']
 const resolve = (...args) => path.resolve(__dirname, ...args)
 
 export default defineConfig({
-  input: resolve('./packages/index.js'),
+  input: resolve('./src/index.js'),
   output: [
     {
       file: resolve('./', pkg.main),
