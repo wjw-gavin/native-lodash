@@ -1,4 +1,5 @@
 .husky
+src
 packages
 test
 coverage
