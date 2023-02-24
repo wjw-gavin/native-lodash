@@ -20,9 +20,10 @@
     "test:coverage": "vitest run --coverage"
   },
   "keywords": [
-    "javascript",
+    "js",
     "lodash",
-    "utilities"
+    "utilities",
+    "javascript"
   ],
   "devDependencies": {
     "@babel/core": "^7.21.0",
