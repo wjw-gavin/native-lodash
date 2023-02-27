@@ -1,4 +1,4 @@
-import { uniqBy } from '../packages'
+import { uniqBy } from '../src'
 
 describe('uniqBy', () => {
   test('数组元素为基本类型去重', () => {

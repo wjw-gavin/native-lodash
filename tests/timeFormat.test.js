@@ -1,4 +1,4 @@
-import { timeFormat } from '../packages'
+import { timeFormat } from '../src'
 
 describe('timeFormat', () => {
   test('格式化时间', () => {

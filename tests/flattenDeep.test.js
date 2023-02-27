@@ -1,4 +1,4 @@
-import { flattenDeep } from '../packages'
+import { flattenDeep } from '../src'
 
 test('递归展平数组', () => {
   const arrBase = [1, [[2], [3, [4]], 5]]

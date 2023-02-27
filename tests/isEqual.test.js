@@ -1,4 +1,4 @@
-import { isEqual } from '../packages'
+import { isEqual } from '../src'
 
 describe('isEqual', () => {
   test('判断对象是否相等。', () => {
