@@ -1,4 +1,4 @@
-import { toFixed } from '../packages'
+import { toFixed } from '../src'
 
 describe('toFixed', () => {
   // 0.345.toFixed(2) = 0.34

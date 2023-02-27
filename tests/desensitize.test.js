@@ -1,4 +1,4 @@
-import { desensitize } from '../packages'
+import { desensitize } from '../src'
 
 describe('desensitize', () => {
   test('姓名脱敏', () => {

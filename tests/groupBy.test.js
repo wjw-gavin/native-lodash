@@ -1,4 +1,4 @@
-import { groupBy } from '../packages'
+import { groupBy } from '../src'
 
 test('对象数组根据某个字段分类', () => {
   const arr = [

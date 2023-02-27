@@ -1,4 +1,4 @@
-import { eq } from '../packages'
+import { eq } from '../src'
 
 describe('eq', () => {
   test('执行 SameValueZero 比较两者的值，来确定它们是否相等', () => {

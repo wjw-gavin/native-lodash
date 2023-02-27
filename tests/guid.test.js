@@ -1,4 +1,4 @@
-import { guid } from '../packages'
+import { guid } from '../src'
 
 describe('全局唯一标识符', () => {
   test('长度为12', () => {

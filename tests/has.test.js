@@ -1,4 +1,4 @@
-import { has } from '../packages'
+import { has } from '../src'
 
 test('检查一个对象中是否包含某个key', () => {
   const obj = {

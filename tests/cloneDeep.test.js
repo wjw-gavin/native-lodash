@@ -1,4 +1,4 @@
-import { cloneDeep } from '../packages'
+import { cloneDeep } from '../src'
 
 test('深度克隆对象', () => {
   const obj = {
