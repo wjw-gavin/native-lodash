@@ -8,11 +8,15 @@
 export function getUrlParams(name, url) {
   const reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)')
   let result = null
-  if (!origin) {
+
+  if (!url) {
     result = window.location.search.substr(1).match(reg)
   } else {
-    result = origin.substr(1).match(reg)
+    result = url.split('?')[1].match(reg)
+    console.log(result)
   }
+
   if (result != null) return decodeURIComponent(result[2])
+
   return null
 }

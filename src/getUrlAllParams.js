@@ -9,6 +9,7 @@ export function getUrlAllParams(url) {
   const pa = url.substring(url.indexOf('?') + 1),
     arr = pa.split('&'),
     result = {}
+
   for (var i = 0, _len = arr.length; i < _len; i++) {
     var pos = arr[i].indexOf('=')
     if (pos == -1) {
@@ -18,5 +19,6 @@ export function getUrlAllParams(url) {
       value = window.decodeURIComponent(arr[i].substring(pos + 1))
     result[name] = value
   }
+
   return result
 }
