@@ -39,6 +39,7 @@
     "execa": "^5.1.1",
     "husky": "^8.0.3",
     "inquirer": "^6.5.2",
+    "jsdom": "^21.1.0",
     "nano-staged": "^0.8.0",
     "ora": "^5.4.1",
     "prettier": "^2.8.4",
