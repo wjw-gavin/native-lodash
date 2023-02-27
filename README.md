@@ -62,6 +62,8 @@ console.log(moneyFormat(money, 2))
 1. [download](#download)
 1. [eq](#eq)
 1. [flattenDeep](#flattendeep)
+1. [getUrlAllParams](#geturlallparams)
+1. [getUrlParams](#geturlparams)
 1. [groupBy](#groupby)
 1. [guid](#guid)
 1. [has](#has)
@@ -201,6 +203,37 @@ import { flattenDeep } from 'native-lodash'
 
 flattenDeep([1, [2, [3, [4]], 5]])
 // => [1, 2, 3, 4, 5]
+```
+### getUrlAllParams
+```js
+/**
+ * @description 获取 url 中所有参数
+ */
+
+// 使用
+import { getUrlAllParams } from 'native-lodash'
+
+const url = 'https://www.baidu.com?name=gavin&age=18'
+
+getUrlAllParams(url)
+// { name: 'gavin', age: '18'}
+```
+### getUrlParams
+```js
+/**
+ * @description 获取 url 中所有参数
+ */
+
+// 使用
+import { getUrlParams } from 'native-lodash'
+
+const url = 'https://www.baidu.com?name=gavin&age=18'
+
+getUrlParams('name', url)
+// gavin
+
+getUrlParams('age', url)
+// 18
 ```
 ### groupBy
 ```js
