@@ -1,4 +1,4 @@
-import { moneyFormat } from '../packages'
+import { moneyFormat } from '../src'
 
 describe('moneyFormat', () => {
   test('数字格式化', () => {

@@ -1,4 +1,4 @@
-import { trim } from '../packages'
+import { trim } from '../src'
 
 describe('trim', () => {
   test('去除两端空格 both', () => {

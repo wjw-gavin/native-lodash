@@ -1,4 +1,4 @@
-import { omit } from '../packages'
+import { omit } from '../src'
 
 describe('omit', () => {
   test('可以理解为删除object对象的属性', () => {

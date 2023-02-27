@@ -1,4 +1,4 @@
-import { queryParams } from '../packages'
+import { queryParams } from '../src'
 
 describe('queryParams', () => {
   test('对象转url参数，不含数组', () => {
