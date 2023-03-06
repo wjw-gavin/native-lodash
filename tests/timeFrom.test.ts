@@ -1,4 +1,4 @@
-import { timeFrom, timeFormat } from '../src'
+import { timeFormat, timeFrom } from '../src'
 
 describe('timeFrom', () => {
   const date = new Date()

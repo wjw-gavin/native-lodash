@@ -6,16 +6,16 @@
 
 export function trim(str, pos = 'both') {
   str = String(str)
-  if (pos == 'both') {
+  if (pos === 'both') {
     return str.replace(/^\s+|\s+$/g, '')
   }
-  if (pos == 'left') {
+  if (pos === 'left') {
     return str.replace(/^\s*/, '')
   }
-  if (pos == 'right') {
+  if (pos === 'right') {
     return str.replace(/(\s*$)/g, '')
   }
-  if (pos == 'all') {
+  if (pos === 'all') {
     return str.replace(/\s+/g, '')
   }
   return str

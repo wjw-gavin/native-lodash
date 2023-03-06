@@ -6,7 +6,7 @@
 
 export function groupBy(array, property) {
   return array.reduce((result, obj) => {
-    let key = obj[property]
+    const key = obj[property]
     if (!result[key]) {
       result[key] = []
     }

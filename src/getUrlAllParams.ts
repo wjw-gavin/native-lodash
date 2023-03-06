@@ -6,17 +6,17 @@
 
 export function getUrlAllParams(url) {
   url = url ? url : window.location.href
-  const pa = url.substring(url.indexOf('?') + 1),
+  const pa = url.slice(Math.max(0, url.indexOf('?') + 1)),
     arr = pa.split('&'),
     result = {}
 
-  for (var i = 0, _len = arr.length; i < _len; i++) {
-    var pos = arr[i].indexOf('=')
-    if (pos == -1) {
+  for (let i = 0, _len = arr.length; i < _len; i++) {
+    const pos = arr[i].indexOf('=')
+    if (pos === -1) {
       continue
     }
-    var name = arr[i].substring(0, pos),
-      value = window.decodeURIComponent(arr[i].substring(pos + 1))
+    const name = arr[i].slice(0, Math.max(0, pos)),
+      value = window.decodeURIComponent(arr[i].slice(Math.max(0, pos + 1)))
     result[name] = value
   }
 

@@ -4,10 +4,10 @@
 
 export const throttle = (func, time) => {
   let activeTime = 0
-  return function () {
+  return function (...args) {
     const current = Date.now()
     if (current - activeTime > time) {
-      func.apply(this, arguments)
+      Reflect.apply(func, this, args)
       activeTime = Date.now()
     }
   }

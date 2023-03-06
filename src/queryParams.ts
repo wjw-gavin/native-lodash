@@ -4,15 +4,20 @@
  * @param {Boolean} isPrefix,是否自动加上"?"
  * @param {string} arrayFormat 规则 indices|brackets|repeat|comma
  */
-export function queryParams(data = {}, isPrefix = true, arrayFormat = 'brackets') {
+export function queryParams(
+  data = {},
+  isPrefix = true,
+  arrayFormat = 'brackets'
+) {
   const prefix = isPrefix ? '?' : ''
   const _result = []
-  if (['indices', 'brackets', 'repeat', 'comma'].indexOf(arrayFormat) == -1)
+  if (!['indices', 'brackets', 'repeat', 'comma'].includes(arrayFormat))
     arrayFormat = 'brackets'
+  // eslint-disable-next-line no-restricted-syntax
   for (const key in data) {
     const value = data[key]
     // 去掉为空的参数
-    if (['', undefined, null].indexOf(value) >= 0) {
+    if (['', undefined, null].includes(value)) {
       continue
     }
     // 如果值为数组，另行处理
@@ -21,8 +26,8 @@ export function queryParams(data = {}, isPrefix = true, arrayFormat = 'brackets'
       switch (arrayFormat) {
         case 'indices':
           // 结果: ids[0]=1&ids[1]=2&ids[2]=3
-          for (let i = 0; i < value.length; i++) {
-            _result.push(`${key}[${i}]=${value[i]}`)
+          for (const [i, element] of value.entries()) {
+            _result.push(`${key}[${i}]=${element}`)
           }
           break
         case 'brackets':
@@ -39,6 +44,7 @@ export function queryParams(data = {}, isPrefix = true, arrayFormat = 'brackets'
           break
         case 'comma':
           // 结果: ids=1,2,3
+          // eslint-disable-next-line no-case-declarations
           let commaStr = ''
           value.forEach((_value) => {
             commaStr += (commaStr ? ',' : '') + _value
@@ -50,5 +56,5 @@ export function queryParams(data = {}, isPrefix = true, arrayFormat = 'brackets'
       _result.push(`${key}=${value}`)
     }
   }
-  return _result.length ? prefix + _result.join('&') : ''
+  return _result.length > 0 ? prefix + _result.join('&') : ''
 }

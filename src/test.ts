@@ -2,11 +2,14 @@
  * 各类校验方法
  */
 
+export const isDef = <T>(val: T): val is NonNullable<T> =>
+  val !== undefined && val !== null
+
 /**
  * 验证电子邮箱格式
  */
 function isEmail(value) {
-  return /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/.test(
+  return /^\w+((-\w+)|(\.\w+))*@[\dA-Za-z]+(([.-])[\dA-Za-z]+)*\.[\dA-Za-z]+$/.test(
     value
   )
 }
@@ -33,7 +36,7 @@ function isString(str) {
  * 验证身份证号码
  */
 function isIdCard(value) {
-  return /^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}([0-9]|X)$/.test(
+  return /^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0-2|]\d)|3[01])\d{3}(\d|X)$/.test(
     value
   )
 }
@@ -44,10 +47,10 @@ function isIdCard(value) {
 function isCarNo(value) {
   // 新能源车牌
   const xreg =
-    /^[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}(([0-9]{5}[DF]$)|([DF][A-HJ-NP-Z0-9][0-9]{4}$))/
+    /^[A-Z云京使冀吉宁川新晋桂沪津浙渝湘琼甘皖粤苏蒙藏豫贵赣辽鄂闽陕青领鲁黑][A-Z]((\d{5}[DF]$)|([DF][\dA-HJ-NP-Z]\d{4}$))/
   // 旧车牌
   const creg =
-    /^[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}[A-HJ-NP-Z0-9]{4}[A-HJ-NP-Z0-9挂学警港澳]{1}$/
+    /^[A-Z云京使冀吉宁川新晋桂沪津浙渝湘琼甘皖粤苏蒙藏豫贵赣辽鄂闽陕青领鲁黑][A-Z][\dA-HJ-NP-Z]{4}[\dA-HJ-NP-Z学挂港澳警]$/
   if (value.length === 7) {
     return creg.test(value)
   }
@@ -62,7 +65,8 @@ function isCarNo(value) {
  */
 function isEmpty(obj) {
   return (
-    [Object, Array].includes((obj || {}).constructor) && !Object.entries(obj || {}).length
+    [Object, Array].includes((obj || {}).constructor) &&
+    Object.entries(obj || {}).length === 0
   )
 }
 
@@ -99,6 +103,7 @@ function isCode(value, len = 6) {
 const isFunction = (func) => typeof func === 'function'
 
 export const test = {
+  isDef,
   isEmail,
   isMobile,
   isString,

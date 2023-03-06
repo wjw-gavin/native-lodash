@@ -7,6 +7,6 @@
  * @return {Number}
  */
 export function toFixed(num, digit = 2) {
-  const pow = Math.pow(10, digit)
+  const pow = 10 ** digit
   return Math.round(Number(num) * pow) / pow
 }

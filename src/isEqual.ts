@@ -31,7 +31,8 @@ export function isEqual(value, other) {
 
   // 如果key的个数相等,就是第二步
   // 2.以value为基准，和other依次递归比较
-  for (let key in value) {
+  // eslint-disable-next-line no-restricted-syntax
+  for (const key in value) {
     const res = isEqual(value[key], other[key])
     if (!res) {
       return false

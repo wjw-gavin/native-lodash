@@ -43,14 +43,14 @@ export function timeFormat(timestamp = null, formatStr = 'yyyy-mm-dd') {
     // 有其他格式化字符需求可以继续添加，必须转化成字符串
   }
 
-  for (const key in timeSource) {
+  Object.keys(timeSource).forEach((key) => {
     const [ret] = new RegExp(`${key}+`).exec(formatStr) || []
     if (ret) {
       // 年可能只需展示两位
       const beginIndex = key === 'y' && ret.length === 2 ? 2 : 0
       formatStr = formatStr.replace(ret, timeSource[key].slice(beginIndex))
     }
-  }
+  })
 
   return formatStr
 }

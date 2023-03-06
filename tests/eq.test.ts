@@ -9,6 +9,6 @@ describe('eq', () => {
     expect(eq(object, other)).toBeFalsy()
 
     expect(eq('a', 'a')).toBeTruthy()
-    expect(eq(NaN, NaN)).toBeTruthy()
+    expect(eq(Number.NaN, Number.NaN)).toBeTruthy()
   })
 })

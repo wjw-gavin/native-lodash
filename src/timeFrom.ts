@@ -10,12 +10,12 @@ import { timeFormat } from './timeFormat'
  */
 
 export function timeFrom(timestamp, format = 'yyyy-mm-dd') {
-  if (!timestamp) timestamp = Number(new Date())
+  if (!timestamp) timestamp = Date.now()
 
   timestamp = parseInt(timestamp)
   // 判断用户输入的时间戳是秒还是毫秒,一般前端js获取的时间戳是毫秒(13位),后端传过来的为秒(10位)
   if (timestamp.toString().length === 10) timestamp *= 1000
-  let timer = new Date().getTime() - timestamp
+  let timer = Date.now() - timestamp
   timer = parseInt(timer / 1000)
   let tips = ''
   switch (true) {

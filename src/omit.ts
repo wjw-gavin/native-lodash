@@ -26,11 +26,10 @@ export function omit(obj, props) {
   const keys = Object.keys(obj)
   const res = {}
 
-  for (let i = 0; i < keys.length; i++) {
-    const key = keys[i]
+  for (const key of keys) {
     const val = obj[key]
 
-    if (!props || props.indexOf(key) === -1) {
+    if (!props || !props.includes(key)) {
       res[key] = val
     }
   }

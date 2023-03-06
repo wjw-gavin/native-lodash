@@ -10,9 +10,9 @@ export function download(href, title) {
   a.setAttribute('href', href)
   a.setAttribute('download', title ? title : '')
   // 随机字符串id
-  const randomId = Math.random().toString(36).substring(2)
+  const randomId = Math.random().toString(36).slice(2)
   a.id = randomId
-  document.body.appendChild(a)
+  document.body.append(a)
   a.click()
   a.remove()
 }

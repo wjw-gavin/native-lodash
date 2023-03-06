@@ -12,5 +12,8 @@ describe('timeFormat', () => {
 
     expect(timeFormat(date.getTime())).toBe(`${y}-${m}-${d}`)
     expect(timeFormat(date.getTime(), 'yyyy/mm/dd')).toBe(`${y}/${m}/${d}`)
+    expect(timeFormat(date.getTime(), 'yyyy-mm-dd hh:MM:ss')).toBe(
+      `${y}-${m}-${d} ${h}:${M}:${s}`
+    )
   })
 })

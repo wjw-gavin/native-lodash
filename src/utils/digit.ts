@@ -20,7 +20,7 @@ function strip(num, precision = 15) {
  */
 function digitLength(num) {
   // Get digit length of e
-  const eSplit = num.toString().split(/[eE]/)
+  const eSplit = num.toString().split(/[Ee]/)
   const len = (eSplit[0].split('.')[1] || '').length - +(eSplit[1] || 0)
   return len > 0 ? len : 0
 }
@@ -31,11 +31,11 @@ function digitLength(num) {
  * @param {*number} num 输入数
  */
 function float2Fixed(num) {
-  if (num.toString().indexOf('e') === -1) {
+  if (!num.toString().includes('e')) {
     return Number(num.toString().replace('.', ''))
   }
   const dLen = digitLength(num)
-  return dLen > 0 ? strip(Number(num) * Math.pow(10, dLen)) : Number(num)
+  return dLen > 0 ? strip(Number(num) * 10 ** dLen) : Number(num)
 }
 
 /**
@@ -44,10 +44,11 @@ function float2Fixed(num) {
  * @param {*number} num 输入数
  */
 function checkBoundary(num) {
-  if (_boundaryCheckingState) {
-    if (num > Number.MAX_SAFE_INTEGER || num < Number.MIN_SAFE_INTEGER) {
-      console.warn(`${num} 超出了精度限制，结果可能不正确`)
-    }
+  if (
+    _boundaryCheckingState &&
+    (num > Number.MAX_SAFE_INTEGER || num < Number.MIN_SAFE_INTEGER)
+  ) {
+    console.warn(`${num} 超出了精度限制，结果可能不正确`)
   }
 }
 
@@ -85,7 +86,7 @@ export function times(...nums) {
 
   checkBoundary(leftValue)
 
-  return leftValue / Math.pow(10, baseNum)
+  return leftValue / 10 ** baseNum
 }
 
 /**
@@ -99,7 +100,7 @@ export function plus(...nums) {
 
   const [num1, num2] = nums
   // 取最大的小数位
-  const baseNum = Math.pow(10, Math.max(digitLength(num1), digitLength(num2)))
+  const baseNum = 10 ** Math.max(digitLength(num1), digitLength(num2))
   // 把小数都转为整数然后再计算
   return (times(num1, baseNum) + times(num2, baseNum)) / baseNum
 }
@@ -114,7 +115,7 @@ export function minus(...nums) {
   }
 
   const [num1, num2] = nums
-  const baseNum = Math.pow(10, Math.max(digitLength(num1), digitLength(num2)))
+  const baseNum = 10 ** Math.max(digitLength(num1), digitLength(num2))
   return (times(num1, baseNum) - times(num2, baseNum)) / baseNum
 }
 
@@ -135,7 +136,7 @@ export function divide(...nums) {
   // 重要，这里必须用strip进行修正
   return times(
     num1Changed / num2Changed,
-    strip(Math.pow(10, digitLength(num2) - digitLength(num1)))
+    strip(10 ** (digitLength(num2) - digitLength(num1)))
   )
 }
 
@@ -144,7 +145,7 @@ export function divide(...nums) {
  * @export
  */
 export function round(num, ratio) {
-  const base = Math.pow(10, ratio)
+  const base = 10 ** ratio
   let result = divide(Math.round(Math.abs(times(num, base))), base)
   if (num < 0 && result !== 0) {
     result = times(result, -1)
