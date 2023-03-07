@@ -466,9 +466,7 @@ timeFormat(date.getTime(), 'yyyy/mm/dd')
 /**
  * @description 时间戳转为多久之前
  * @param {String | Number} timestamp 时间戳
- * @param {String | Boolean} format
- * 格式化规则如果为时间格式字符串，超出一定时间范围，返回固定的时间格式；
- * 如果为布尔值false，无论什么时间，都返回多久以前的格式
+ * @param {String} format 格式化规则,超出一定时间范围，返回固定的时间格式
  * @returns {string} 转化后的内容
  */
 

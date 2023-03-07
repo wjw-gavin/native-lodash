@@ -4,7 +4,7 @@
  * @param {string} property 分类依据的字段
  */
 
-export function groupBy(array, property) {
+export function groupBy(array: any[], property: string) {
   return array.reduce((result, obj) => {
     const key = obj[property]
     if (!result[key]) {

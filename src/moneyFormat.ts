@@ -1,21 +1,20 @@
-/* eslint-disable unicorn/prefer-number-properties */
-import { round } from './utils/digit.js'
+import { round } from './utils/digit'
+import type { Numeric } from './types'
 
 /**
  * @description 金额格式化
  * @param {number|string} number 要格式化的数字
  * @param {number} decimals 保留几位小数
  * @returns {string} 格式化后的数字
- * https://github.com/umicro/uView2.0/blob/master/uni_modules/uview-ui/libs/function/digit.js
  */
 
-export function moneyFormat(number, decimals = 0) {
+export function moneyFormat(number: Numeric, decimals = 0): string {
   number = `${number}`.replace(/[^\d+-Ee]/g, '')
   const n = !isFinite(+number) ? 0 : +number
   const prec = !isFinite(+decimals) ? 0 : Math.abs(decimals)
   const sep = ','
   const dec = '.'
-  let s = ''
+  let s: string[] = []
 
   s = (prec ? `${round(n, prec)}` : `${Math.round(n)}`).split('.')
   const re = /(-?\d+)(\d{3})/
@@ -27,5 +26,6 @@ export function moneyFormat(number, decimals = 0) {
     s[1] = s[1] || ''
     s[1] += Array.from({ length: prec - s[1].length + 1 }).join('0')
   }
+
   return s.join(dec)
 }

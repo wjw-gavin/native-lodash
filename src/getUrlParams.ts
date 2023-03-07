@@ -5,7 +5,7 @@
  * @returns {string | null}
  */
 
-export function getUrlParams(name, url) {
+export function getUrlParams(name: string, url: string) {
   const reg = new RegExp(`(^|&)${name}=([^&]*)(&|$)`)
   let result = null
 

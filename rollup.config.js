@@ -5,7 +5,7 @@ import commonjs from '@rollup/plugin-commonjs'
 import json from '@rollup/plugin-json'
 import alias from '@rollup/plugin-alias'
 
-const entries = ['src/index.ts']
+const entries = ['./src/index.ts']
 
 const plugins = [
   alias({

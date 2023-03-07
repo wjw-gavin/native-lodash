@@ -5,6 +5,6 @@
  * @returns {boolean}
  */
 
-export function eq(value, other) {
+export function eq(value: unknown, other: unknown): boolean {
   return value === other || (value !== value && other !== other)
 }

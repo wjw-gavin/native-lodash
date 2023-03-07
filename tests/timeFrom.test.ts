@@ -25,15 +25,15 @@ describe('timeFrom', () => {
   })
 
   test('几个月前', () => {
-    expect(timeFrom(timestamp - 2592000000, false)).toBe('1个月前')
+    expect(timeFrom(timestamp - 2592000000)).toBe('1个月前')
   })
 
   test('几年前', () => {
-    expect(timeFrom(timestamp - 86400 * 365 * 1000, false)).toBe('1年前')
+    expect(timeFrom(timestamp - 86400 * 365 * 1000)).toBe('1年前')
   })
 
-  test('超出一定时间范围，返回固定的时间格式', () => {
+  test('超出一定时间范围，自定义时间格式', () => {
     const s = timestamp - 2592000000
-    expect(timeFrom(s)).toBe(timeFormat(s))
+    expect(timeFrom(s, 'yyyy-mm-dd')).toBe(timeFormat(s))
   })
 })

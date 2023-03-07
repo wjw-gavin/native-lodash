@@ -1,15 +1,14 @@
 /**
  * @description 全局唯一标识
  * @param {Number} len uuid的长度
- * @param {Boolean} firstLetter 将首位设置为某个字母，默认为 u
+ * @param {String} firstLetter 将首位设置为某个字母，默认为 u
  * @param {Nubmer} radix 生成uuid的基数(意味着返回的字符串都是这个基数),2-二进制,8-八进制,10-十进制,16-十六进制,默认62
  */
 
-export function guid(len = 32, firstLetter = 'u', radix = null) {
+export function guid(len = 32, firstLetter = 'u', radix = 62) {
   const chars =
     '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split('')
   const uuid = []
-  radix = radix || chars.length > 0
 
   if (len) {
     // 如果指定uuid长度,只是取随机的字符,0|x为位运算,能去掉x的小数位,返回整数位

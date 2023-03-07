@@ -5,8 +5,9 @@
  * @param {Number} end 后几位不参与脱敏，默认 4
  * @returns {String} 脱敏后的字符串
  */
+import type { Numeric } from './types'
 
-export function desensitize(value, start = 3, end = 4, str = '*') {
+export function desensitize(value: Numeric, start = 3, end = 4, str = '*') {
   if (!value) return value
 
   const reg = new RegExp(`^(.{${start}})(.*)(.{${end}})$`)

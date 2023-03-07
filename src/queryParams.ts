@@ -1,13 +1,17 @@
+import { test } from './test'
+import type { TObject } from './types'
+
+type ArrayFormat = 'indices' | 'brackets' | 'repeat' | 'comma'
 /**
  * @description 对象转url参数
  * @param {object} data,对象
  * @param {Boolean} isPrefix,是否自动加上"?"
- * @param {string} arrayFormat 规则 indices|brackets|repeat|comma
+ * @param {ArrayFormat} arrayFormat 规则 indices|brackets|repeat|comma
  */
 export function queryParams(
-  data = {},
+  data: TObject = {},
   isPrefix = true,
-  arrayFormat = 'brackets'
+  arrayFormat: ArrayFormat = 'brackets'
 ) {
   const prefix = isPrefix ? '?' : ''
   const _result = []
@@ -16,12 +20,11 @@ export function queryParams(
   // eslint-disable-next-line no-restricted-syntax
   for (const key in data) {
     const value = data[key]
-    // 去掉为空的参数
-    if (['', undefined, null].includes(value)) {
-      continue
-    }
+
+    if (!test.isDef(value)) continue
+
     // 如果值为数组，另行处理
-    if (value.constructor === Array) {
+    if (Array.isArray(value)) {
       // e.g. {ids: [1, 2, 3]}
       switch (arrayFormat) {
         case 'indices':
@@ -56,5 +59,6 @@ export function queryParams(
       _result.push(`${key}=${value}`)
     }
   }
+
   return _result.length > 0 ? prefix + _result.join('&') : ''
 }

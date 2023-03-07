@@ -1,4 +1,9 @@
 import { test } from './test'
+import type { TObject } from './types'
+
+function isObject(val: unknown): boolean {
+  return test.isArray(val) || test.isObject(val)
+}
 
 /**
  * @description 判断对象或数组是否相等。
@@ -7,11 +12,7 @@ import { test } from './test'
  * @returns {boolean}
  */
 
-function isObject(val) {
-  return test.isArray(val) || test.isObject(val)
-}
-
-export function isEqual(value, other) {
+export function isEqual(value: TObject, other: TObject): boolean {
   // 两个数据有任何一个不是对象或数组
   if (!isObject(value) || !isObject(other)) {
     return value === other
@@ -33,7 +34,7 @@ export function isEqual(value, other) {
   // 2.以value为基准，和other依次递归比较
   // eslint-disable-next-line no-restricted-syntax
   for (const key in value) {
-    const res = isEqual(value[key], other[key])
+    const res = isEqual(value[key] as TObject, other[key] as TObject)
     if (!res) {
       return false
     }

@@ -1,6 +1,4 @@
-/**
- * https://github.com/umicro/uView2.0/blob/master/uni_modules/uview-ui/libs/function/digit.js
- */
+import type { Numeric } from '../types'
 
 let _boundaryCheckingState = true // 是否进行越界检查的全局开关
 
@@ -9,16 +7,16 @@ let _boundaryCheckingState = true // 是否进行越界检查的全局开关
  * @private
  * @example strip(0.09999999999999998)=0.1
  */
-function strip(num, precision = 15) {
+function strip(num: Numeric, precision = 15) {
   return +parseFloat(Number(num).toPrecision(precision))
 }
 
 /**
  * Return digits length of a number
  * @private
- * @param {*number} num Input number
+ * @param {Numeric} num Input number
  */
-function digitLength(num) {
+function digitLength(num: Numeric) {
   // Get digit length of e
   const eSplit = num.toString().split(/[Ee]/)
   const len = (eSplit[0].split('.')[1] || '').length - +(eSplit[1] || 0)
@@ -28,9 +26,9 @@ function digitLength(num) {
 /**
  * 把小数转成整数,如果是小数则放大成整数
  * @private
- * @param {*number} num 输入数
+ * @param {Numeric} num 输入数
  */
-function float2Fixed(num) {
+function float2Fixed(num: Numeric) {
   if (!num.toString().includes('e')) {
     return Number(num.toString().replace('.', ''))
   }
@@ -41,9 +39,9 @@ function float2Fixed(num) {
 /**
  * 检测数字是否越界，如果越界给出提示
  * @private
- * @param {*number} num 输入数
+ * @param {Numeric} num 输入数
  */
-function checkBoundary(num) {
+function checkBoundary(num: Numeric) {
   if (
     _boundaryCheckingState &&
     (num > Number.MAX_SAFE_INTEGER || num < Number.MIN_SAFE_INTEGER)
@@ -58,7 +56,7 @@ function checkBoundary(num) {
  * @param {function} operation 迭代操作
  * @private
  */
-function iteratorOperation(arr, operation) {
+function iteratorOperation(arr: any[], operation: any) {
   const [num1, num2, ...others] = arr
   let res = operation(num1, num2)
 
@@ -73,7 +71,7 @@ function iteratorOperation(arr, operation) {
  * 高精度乘法
  * @export
  */
-export function times(...nums) {
+export function times(...nums: any[]) {
   if (nums.length > 2) {
     return iteratorOperation(nums, times)
   }
@@ -93,7 +91,7 @@ export function times(...nums) {
  * 高精度加法
  * @export
  */
-export function plus(...nums) {
+export function plus(...nums: any[]) {
   if (nums.length > 2) {
     return iteratorOperation(nums, plus)
   }
@@ -109,7 +107,7 @@ export function plus(...nums) {
  * 高精度减法
  * @export
  */
-export function minus(...nums) {
+export function minus(...nums: any[]) {
   if (nums.length > 2) {
     return iteratorOperation(nums, minus)
   }
@@ -123,7 +121,7 @@ export function minus(...nums) {
  * 高精度除法
  * @export
  */
-export function divide(...nums) {
+export function divide(...nums: any[]) {
   if (nums.length > 2) {
     return iteratorOperation(nums, divide)
   }
@@ -144,7 +142,7 @@ export function divide(...nums) {
  * 四舍五入
  * @export
  */
-export function round(num, ratio) {
+export function round(num: number, ratio: number) {
   const base = 10 ** ratio
   let result = divide(Math.round(Math.abs(times(num, base))), base)
   if (num < 0 && result !== 0) {

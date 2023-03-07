@@ -5,7 +5,7 @@ import { test } from './test'
  * @returns {*} 克隆后的对象或者原值（不是对象）
  */
 
-export const deepClone = <T extends Record<string, any> | null | undefined>(
+export const cloneDeep = <T extends Record<string, any> | null | undefined>(
   obj: T
 ): T => {
   if (!test.isDef(obj)) {
@@ -13,13 +13,13 @@ export const deepClone = <T extends Record<string, any> | null | undefined>(
   }
 
   if (Array.isArray(obj)) {
-    return obj.map((item) => deepClone(item)) as unknown as T
+    return obj.map((item) => cloneDeep(item)) as unknown as T
   }
 
   if (test.isObject(obj)) {
     const to = {} as Record<string, any>
     Object.keys(obj).forEach((key) => {
-      to[key] = deepClone(obj[key])
+      to[key] = cloneDeep(obj[key])
     })
 
     return to as T

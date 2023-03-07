@@ -8,9 +8,13 @@ import { test } from './test'
  * @returns {number} 返回计时器 id
  */
 
-export function delay(func, wait, ...args) {
+export function delay(
+  func: (...args: any[]) => any,
+  wait = 0,
+  ...args: any[]
+): ReturnType<typeof setTimeout> {
   if (!test.isFunction(func)) {
     throw new TypeError('Expected a function')
   }
-  return setTimeout(func, +wait || 0, ...args)
+  return setTimeout(func, wait, ...args)
 }
