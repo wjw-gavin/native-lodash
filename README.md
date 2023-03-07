@@ -7,7 +7,7 @@
 方式1: 通过 CDN 引入
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/native-lodash/dist/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/native-lodash/dist/index.js"></script>
 
 <script>
   console.log(nativeLodash)
