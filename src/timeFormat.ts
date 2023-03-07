@@ -1,4 +1,3 @@
-import { type } from 'node:os'
 import { test } from './test'
 import type { Numeric } from './types'
 
@@ -10,8 +9,6 @@ export type TimeFormatItem = 'y' | 'm' | 'd' | 'h' | 'M' | 's'
  * @param {String} formatStr 格式化规则 yyyy:mm:dd|yyyy:mm|yyyy年mm月dd日|yyyy年mm月dd日 hh时MM分等,可自定义组合 默认yyyy-mm-dd
  * @returns {string} 返回格式化后的字符串
  */
-
-type
 
 export function timeFormat(
   timestamp: Numeric,
