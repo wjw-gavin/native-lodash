@@ -1,6 +1,6 @@
 {
   "name": "native-lodash",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "常用的js工具库",
   "type": "module",
   "keywords": [
@@ -34,7 +34,7 @@
     "cz": "czg",
     "clean": "pnpm store prune",
     "lint:staged": "nano-staged",
-    "postinstall": "npx husky install",
+    "prepare": "husky install",
     "prepublishOnly": "npm run build",
     "release": "bumpp --commit --push --tag && npm publish"
   },
