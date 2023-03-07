@@ -1,6 +1,6 @@
 {
   "name": "native-lodash",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "常用的js工具库",
   "type": "module",
   "keywords": [
