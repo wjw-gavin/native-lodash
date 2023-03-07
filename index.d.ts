@@ -40,8 +40,6 @@ declare function isArray(value: unknown): boolean;
 declare function isObject(value: unknown): boolean;
 /**
  * 是否短信验证码
- * @param {String} value 验证码字符串
- * @param {Number} len 验证码长度，默认为6
  */
 declare function isCode(value: string, len?: number): boolean;
 declare const test: {
@@ -127,7 +125,6 @@ declare function isEqual(value: TObject, other: TObject): boolean;
  * @param {number|string} number 要格式化的数字
  * @param {number} decimals 保留几位小数
  * @returns {string} 格式化后的数字
- * https://github.com/umicro/uView2.0/blob/master/uni_modules/uview-ui/libs/function/digit.js
  */
 declare function moneyFormat(number: Numeric, decimals?: number): string;
 
@@ -163,6 +160,12 @@ declare function queryParams(data?: TObject, isPrefix?: boolean, arrayFormat?: A
 declare const throttle: (func: (...args: any[]) => any, time?: number) => (this: unknown, ...args: any[]) => void;
 
 type TimeFormatItem = 'y' | 'm' | 'd' | 'h' | 'M' | 's';
+/**
+ * @description 格式化时间
+ * @param {String|Number} timestamp 需要格式化的时间戳
+ * @param {String} formatStr 格式化规则 yyyy:mm:dd|yyyy:mm|yyyy年mm月dd日|yyyy年mm月dd日 hh时MM分等,可自定义组合 默认yyyy-mm-dd
+ * @returns {string} 返回格式化后的字符串
+ */
 declare function timeFormat(timestamp: Numeric, formatStr?: string): string;
 
 /**
