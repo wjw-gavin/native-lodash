@@ -26,17 +26,14 @@
 </script>
 ```
 
-方式2: 通过 npm | yarn | pnpm 安装
+方式2: 通过 pnpm | yarn | npm 安装
 
 ```js
+// pnpm | yarn
+pnpm(yarn) add native-lodash
+
 // npm
 npm install native-lodash
-
-// yarn
-yarn add native-lodash
-
-// pnpm
-pnpm add native-lodash
 
 // 使用
 import { desensitize, moneyFormat } from 'native-lodash'
@@ -479,7 +476,7 @@ timeFrom(timestamp)
 // => 刚刚
 
 // 根据时间差显示为：刚刚；几分钟前；几小时前；昨天；几天前；再往前显示如下说明：
-// 如果判断format的有值，则再往前的时间显示为 format 格式，否则继续显示几个月前、几年前。
+// 如果判断format有值，则再往前的时间显示为 format 格式，否则继续显示几个月前、几年前。
 
 ```
 ### toFixed
