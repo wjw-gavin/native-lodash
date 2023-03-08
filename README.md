@@ -446,19 +446,19 @@ jQuery(window).on('scroll', throttle(updatePositionFun, 300));
 /**
  * @description 格式化时间
  * @param {String|Number} timestamp 需要格式化的时间戳
- * @param {String} format 格式化规则 yyyy:mm:dd hh:MM:ss,可自定义组合 默认yyyy-mm-dd
+ * @param {String} format 格式化规则 yyyy-mm-dd hh:MM:ss,可自定义组合 默认yyyy-mm-dd
  * @returns {string} 返回格式化后的字符串
  */
 
 // 使用
 import { timeFormat } from 'native-lodash'
 
-const date = new Date()
+const timestamp = Date.now()
 
-timeFormat(date.getTime())
+timeFormat(timestamp)
 // => 2022-12-22
 
-timeFormat(date.getTime(), 'yyyy/mm/dd')
+timeFormat(timestamp, 'yyyy/mm/dd')
 // => 2022/12/22
 ```
 ### timeFrom
@@ -466,21 +466,20 @@ timeFormat(date.getTime(), 'yyyy/mm/dd')
 /**
  * @description 时间戳转为多久之前
  * @param {String | Number} timestamp 时间戳
- * @param {String} format 格式化规则,超出一定时间范围，返回固定的时间格式
+ * @param {String} format 格式化规则,超出一定时间范围，返回固定的时间格式，同timeFormat中format
  * @returns {string} 转化后的内容
  */
 
 // 使用
 import { timeFrom } from 'native-lodash'
 
-const date = new Date()
-const timestamp = date.getTime()
+const timestamp = Date.now()
 
 timeFrom(timestamp)
 // => 刚刚
 
 // 根据时间差显示为：刚刚；几分钟前；几小时前；昨天；几天前；再往前显示如下说明：
-// 如果判断format的有值，则再往前的时间显示为 format 格式，否则继续显示几个月前；几年前。
+// 如果判断format的有值，则再往前的时间显示为 format 格式，否则继续显示几个月前、几年前。
 
 ```
 ### toFixed
