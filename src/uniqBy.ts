@@ -1,4 +1,4 @@
-import { test } from '.'
+import { test } from './test'
 
 /**
  * @description 调用数组的每个元素以产生唯一性
