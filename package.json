@@ -7,7 +7,7 @@
     "js",
     "lodash",
     "utils",
-    "javascript"
+    "typescript"
   ],
   "license": "MIT",
   "homepage": "https://github.com/wjw-gavin/native-lodash",
