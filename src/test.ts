@@ -26,7 +26,7 @@ function isMobile(value: Numeric) {
 /**
  * 验证字符串
  */
-function isString(str: any) {
+function isString(str: unknown) {
   if (str != null && typeof str.valueOf() === 'string') {
     return true
   }
