@@ -4,7 +4,7 @@
  * @param {String} title 文件名称
  */
 
-export function download(href: string, title: string) {
+export function download(href: string, title?: string) {
   const a: HTMLAnchorElement = document.createElement('a')
   a.style.display = 'none'
   a.setAttribute('href', href)
