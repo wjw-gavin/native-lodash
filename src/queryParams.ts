@@ -1,4 +1,4 @@
-import { test } from './test'
+import { isDef } from '.'
 import type { TObject } from './types'
 
 type ArrayFormat = 'indices' | 'brackets' | 'repeat' | 'comma'
@@ -21,7 +21,7 @@ export function queryParams(
   for (const key in data) {
     const value = data[key]
 
-    if (!test.isDef(value)) continue
+    if (!isDef(value)) continue
 
     // 如果值为数组，另行处理
     if (Array.isArray(value)) {

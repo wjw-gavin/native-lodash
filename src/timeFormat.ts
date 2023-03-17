@@ -1,4 +1,4 @@
-import { test } from './test'
+import { isString } from '.'
 import type { Numeric } from './types'
 
 export type TimeFormatItem = 'y' | 'm' | 'd' | 'h' | 'M' | 's'
@@ -27,7 +27,7 @@ export function timeFormat(
   }
 
   // 若用户传入字符串格式时间戳，new Date无法解析，需做兼容
-  else if (test.isString(timestamp)) {
+  else if (isString(timestamp)) {
     date = new Date(Number(timestamp))
   }
 

@@ -1,4 +1,4 @@
-import { test } from './test'
+import { isObject, isString } from '.'
 import type { TObject } from './types'
 
 /**
@@ -18,9 +18,9 @@ import type { TObject } from './types'
  */
 
 export function omit(obj: TObject, props: string | string[]): object {
-  if (!test.isObject(obj)) return {}
+  if (!isObject(obj)) return {}
 
-  if (test.isString(props)) {
+  if (isString(props)) {
     props = [props] as string[]
   }
 

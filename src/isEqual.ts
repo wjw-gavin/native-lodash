@@ -1,8 +1,8 @@
-import { test } from './test'
+import { isArray, isObject } from '.'
 import type { TObject } from './types'
 
-function isObject(val: unknown): boolean {
-  return test.isArray(val) || test.isObject(val)
+function _isObject(val: unknown): boolean {
+  return isArray(val) || isObject(val)
 }
 
 /**
@@ -14,7 +14,7 @@ function isObject(val: unknown): boolean {
 
 export function isEqual(value: TObject, other: TObject): boolean {
   // 两个数据有任何一个不是对象或数组
-  if (!isObject(value) || !isObject(other)) {
+  if (!_isObject(value) || !_isObject(other)) {
     return value === other
   }
   // 如果传的两个参数都是同一个对象或数组

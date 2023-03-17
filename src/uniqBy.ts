@@ -1,4 +1,4 @@
-import { test } from './test'
+import { isString } from '.'
 
 /**
  * @description 调用数组的每个元素以产生唯一性
@@ -10,7 +10,7 @@ import { test } from './test'
 export function uniqBy<T>(arr: T[], iteratee?: any): T[] {
   if (!iteratee) return [...new Set(arr)]
 
-  const it = test.isString(iteratee) ? (val: any) => val[iteratee] : iteratee
+  const it = isString(iteratee) ? (val: any) => val[iteratee] : iteratee
 
   return arr.reduce((pre: T[], cur) => {
     if (!pre.some((item) => it(item) === it(cur))) {

@@ -1,4 +1,5 @@
-import { test } from './test'
+import { isDef, isObject } from '.'
+
 /**
  * @description 深度克隆
  * @param {object} obj 需要深度克隆的对象
@@ -8,7 +9,7 @@ import { test } from './test'
 export const cloneDeep = <T extends Record<string, any> | null | undefined>(
   obj: T
 ): T => {
-  if (!test.isDef(obj)) {
+  if (!isDef(obj)) {
     return obj
   }
 
@@ -16,7 +17,7 @@ export const cloneDeep = <T extends Record<string, any> | null | undefined>(
     return obj.map((item) => cloneDeep(item)) as unknown as T
   }
 
-  if (test.isObject(obj)) {
+  if (isObject(obj)) {
     const to = {} as Record<string, any>
     Object.keys(obj).forEach((key) => {
       to[key] = cloneDeep(obj[key])
