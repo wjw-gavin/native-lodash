@@ -416,12 +416,13 @@ test.isEmail,  	// 是否是邮箱
 test.isMobile, 	// 是否是手机号
 test.isString, 	// 是否是字符串
 test.isIdCard, 	// 是否是身份证号
-test.isCarNo,		// 是否是车牌号，包括新能源
-test.isEmpty,		// 是否是空的值：字符串、对象、数组
-test.isObject,		// 是否是对象
-test.isArray,		// 是否是数组
-test.isCode,   	// 是否是验证码，长度默认为6，第二个参数可修改code的校验长度
+test.isCarNo,   // 是否是车牌号，包括新能源
+test.isEmpty,   // 是否是空的值：字符串、对象、数组
+test.isObject,  // 是否是对象
+test.isArray,   // 是否是数组
+test.isCode,    // 是否是验证码，长度默认为6，第二个参数可修改code的校验长度
 test.isFunction	// 是否是函数
+test.isTrue     // 是否是布尔 true 或者是字符 'true'
 ```
 ### throttle
 ```js
