@@ -101,6 +101,11 @@ function isCode(value: string, len = 6) {
  */
 const isFunction = (func: unknown) => typeof func === 'function'
 
+/**
+ * 是否是布尔 true 或者是字符 'true'
+ */
+const isTrue = (val: unknown) => val === true || val === 'true'
+
 export const test = {
   isDef,
   isEmail,
@@ -112,5 +117,6 @@ export const test = {
   isObject,
   isArray,
   isCode,
-  isFunction
+  isFunction,
+  isTrue
 }
