@@ -17,7 +17,7 @@ declare function isMobile(value: Numeric): boolean;
 /**
  * 验证字符串
  */
-declare function isString(str: any): boolean;
+declare function isString(str: unknown): boolean;
 /**
  * 验证身份证号码
  */
@@ -29,7 +29,7 @@ declare function isCarNo(value: string): boolean;
 /**
  * 判断是否为空
  */
-declare function isEmpty(obj: TObject | any[]): boolean;
+declare function isEmpty(val: TObject | any[] | string): boolean;
 /**
  * 是否数组
  */
@@ -42,19 +42,14 @@ declare function isObject(value: unknown): boolean;
  * 是否短信验证码
  */
 declare function isCode(value: string, len?: number): boolean;
-declare const test: {
-    isDef: <T>(val: T) => val is NonNullable<T>;
-    isEmail: typeof isEmail;
-    isMobile: typeof isMobile;
-    isString: typeof isString;
-    isIdCard: typeof isIdCard;
-    isCarNo: typeof isCarNo;
-    isEmpty: typeof isEmpty;
-    isObject: typeof isObject;
-    isArray: typeof isArray;
-    isCode: typeof isCode;
-    isFunction: (func: unknown) => boolean;
-};
+/**
+ * 是否函数方法
+ */
+declare const isFunction: (func: unknown) => func is Function;
+/**
+ * 是否是布尔 true 或者是字符 'true'
+ */
+declare const isTrue: (val: unknown) => boolean;
 
 /**
  * @description 深度克隆
@@ -216,7 +211,7 @@ declare function desensitize(value: Numeric, start?: number, end?: number, str?:
  * @param {String} href  下载链接
  * @param {String} title 文件名称
  */
-declare function download(href: string, title: string): void;
+declare function download(href: string, title?: string): void;
 
 /**
  * @description 获取 url 中指定参数
@@ -233,4 +228,4 @@ declare function getUrlParams(name: string, url: string): string | null;
  */
 declare function getUrlAllParams(url: string): object;
 
-export { TimeFormatItem, cloneDeep, debounce, delay, desensitize, download, eq, flattenDeep, getUrlAllParams, getUrlParams, groupBy, guid, has, isDef, isEqual, moneyFormat, omit, queryParams, test, throttle, timeFormat, timeFrom, toFixed, trim, uniqBy };
+export { TimeFormatItem, cloneDeep, debounce, delay, desensitize, download, eq, flattenDeep, getUrlAllParams, getUrlParams, groupBy, guid, has, isArray, isCarNo, isCode, isDef, isEmail, isEmpty, isEqual, isFunction, isIdCard, isMobile, isObject, isString, isTrue, moneyFormat, omit, queryParams, throttle, timeFormat, timeFrom, toFixed, trim, uniqBy };
