@@ -52,6 +52,7 @@ console.log(moneyFormat(money, 2))
 ```
 # 使用文档
 
+1. [isX](#isx)
 1. [cloneDeep](#clonedeep)
 1. [debounce](#debounce)
 1. [delay](#delay)
@@ -64,11 +65,9 @@ console.log(moneyFormat(money, 2))
 1. [groupBy](#groupby)
 1. [guid](#guid)
 1. [has](#has)
-1. [isEqual](#isequal)
 1. [moneyFormat](#moneyformat)
 1. [omit](#omit)
 1. [queryParams](#queryparams)
-1. [test](#test)
 1. [throttle](#throttle)
 1. [timeFormat](#timeformat)
 1. [timeFrom](#timefrom)
@@ -77,6 +76,40 @@ console.log(moneyFormat(money, 2))
 1. [uniqBy](#uniqby)
 
 
+### isX
+```js
+/**
+ * @description 常用的校验方法
+ * @return Boolean
+ */
+
+// 使用
+import { isEqual } from 'native-lodash'
+
+const obj = { name: 'a' }
+const other = { name: 'a' }
+const deepObj = { a: 'a', b: { c: 'c' } }
+const deepOther = { a: 'a', b: { c: 'c' } }
+
+isEqual(obj, other)
+// => true
+
+isEqual(deepObj, deepOther)
+// => true
+
+// 同理
+isEmail,     // 是否是邮箱
+isMobile,    // 是否是手机号
+isString,    // 是否是字符串
+isIdCard,    // 是否是身份证号
+isCarNo,     // 是否是车牌号，包括新能源
+isEmpty,     // 是否是空的值：字符串、对象、数组
+isObject,    // 是否是对象
+isArray,     // 是否是数组
+isCode,      // 是否是验证码，长度默认为6，第二个参数可修改code的校验长度
+isFunction   // 是否是函数
+isTrue       // 是否是布尔 true 或者是字符 'true'
+```
 ### cloneDeep
 ```js
 /**
@@ -316,26 +349,6 @@ const result = has(object, 'a')
 const result = has(object, 'c.d')
 // => true
 ```
-### isEqual
-```js
-/**
- * @description 执行深比较来确定两者的值是否相等
- */
-
-// 使用
-import { isEqual } from 'native-lodash'
-
-const obj = { name: 'a' }
-const other = { name: 'a' }
-const deepObj = { a: 'a', b: { c: 'c' } }
-const deepOther = { a: 'a', b: { c: 'c' } }
-
-isEqual(obj, other)
-// => true
-
-isEqual(deepObj, deepOther)
-// => true
-```
 ### moneyFormat
 ```js
 /**
@@ -401,28 +414,6 @@ queryParams(query)
 
 queryParams(query, true, 'indices')
 // => ?a=a&c[0]=1&c[1]=2&c[2]=3'
-```
-### test
-```js
-/**
- * @description 常用的校验方法
- * @return Boolean
- */
-
-// 使用
-import { test } from 'native-lodash'
-
-test.isEmail,  	// 是否是邮箱
-test.isMobile, 	// 是否是手机号
-test.isString, 	// 是否是字符串
-test.isIdCard, 	// 是否是身份证号
-test.isCarNo,   // 是否是车牌号，包括新能源
-test.isEmpty,   // 是否是空的值：字符串、对象、数组
-test.isObject,  // 是否是对象
-test.isArray,   // 是否是数组
-test.isCode,    // 是否是验证码，长度默认为6，第二个参数可修改code的校验长度
-test.isFunction	// 是否是函数
-test.isTrue     // 是否是布尔 true 或者是字符 'true'
 ```
 ### throttle
 ```js
