@@ -1,7 +1,7 @@
 /**
  * 各类校验方法
  */
-import type { Numeric, TObject } from './types'
+import type { Numeric } from './types'
 
 export const isDef = <T>(val: T): val is NonNullable<T> =>
   val !== undefined && val !== null
@@ -64,7 +64,7 @@ export function isCarNo(value: string) {
 /**
  * 判断是否为空
  */
-export function isEmpty(val: TObject | any[] | string) {
+export function isEmpty(val: unknown) {
   return (
     val !== '' ||
     (val.constructor === Object && Object.keys(val).length === 0) ||
