@@ -32,9 +32,6 @@
 // pnpm | yarn
 pnpm(yarn) add native-lodash
 
-// npm
-npm install native-lodash
-
 // 使用
 import { desensitize, moneyFormat } from 'native-lodash'
 
