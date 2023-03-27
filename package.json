@@ -39,6 +39,8 @@
     "release": "bumpp --commit --push --tag && npm publish"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.5.0",
+    "@commitlint/config-conventional": "^17.4.4",
     "@rollup/plugin-alias": "^4.0.3",
     "@rollup/plugin-commonjs": "^23.0.7",
     "@rollup/plugin-json": "^5.0.2",
