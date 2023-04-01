@@ -57,6 +57,7 @@ console.log(moneyFormat(money, 2))
 1. [download](#download)
 1. [eq](#eq)
 1. [flattenDeep](#flattendeep)
+1. [getUa](#getua)
 1. [getUrlAllParams](#geturlallparams)
 1. [getUrlParams](#geturlparams)
 1. [groupBy](#groupby)
@@ -231,6 +232,30 @@ import { flattenDeep } from 'native-lodash'
 flattenDeep([1, [2, [3, [4]], 5]])
 // => [1, 2, 3, 4, 5]
 ```
+
+### getUa
+```js
+/**
+ * @description 获取当前网页所在的运行环境
+ * @return 
+  | 'ios'       // ios
+  | 'android'   // android
+  | 'wechat'    // 微信
+  | 'wxwork'    // 企微
+  | 'wxmini'    // 微信小程序
+  | 'dingding'  // 钉钉
+  | 'feishu'    // 飞书
+  | 'mobile'    // 移动端
+  | undefined   // 不是以上情况
+ */
+
+// 使用
+import { getUa } from 'native-lodash'
+
+const ua = getUa()
+// =>  ios
+```
+
 ### getUrlAllParams
 ```js
 /**
