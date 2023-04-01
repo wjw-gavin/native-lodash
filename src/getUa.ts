@@ -3,7 +3,9 @@
  * @returns {IUa} IUa
  */
 
-type IUa =
+const ua = window.navigator.userAgent.toLowerCase()
+
+export function getUa():
   | 'ios'
   | 'android'
   | 'wechat'
@@ -12,11 +14,7 @@ type IUa =
   | 'dingding'
   | 'feishu'
   | 'mobile'
-  | undefined
-
-const ua = window.navigator.userAgent.toLowerCase()
-
-export function getUa(): IUa {
+  | undefined {
   /** ios */
   if (/iphone|ipod|ipad/i.test(ua)) {
     return 'ios'
