@@ -1,5 +1,5 @@
 type Numeric = number | string;
-type TObject = Record<string, unknown>;
+type TObject = Record<any, unknown>;
 
 /**
  * 各类校验方法
@@ -29,7 +29,7 @@ declare function isCarNo(value: string): boolean;
 /**
  * 判断是否为空
  */
-declare function isEmpty(val: TObject | any[] | string): boolean;
+declare function isEmpty(val: unknown): boolean;
 /**
  * 是否数组
  */
@@ -61,7 +61,7 @@ declare const cloneDeep: <T extends Record<string, any> | null | undefined>(obj:
 /**
  * 创建一个 debounced（防抖动）函数，该函数会从上一次被调用后，延迟 wait 毫秒后调用 func 方法
  */
-declare const debounce: (fn: (...args: any[]) => any, ms?: number) => (this: unknown, ...args: any[]) => void;
+declare const debounce: (fn: (...args: any[]) => any, ms?: number, immediate?: boolean) => (this: unknown, ...args: any[]) => void;
 
 /**
  * @description 延迟 wait 毫秒后调用 func。 调用时，任何附加的参数会传给func。
@@ -152,7 +152,7 @@ declare function queryParams(data?: TObject, isPrefix?: boolean, arrayFormat?: A
 /**
  * 创建一个节流函数，在 wait 秒内最多执行 func 一次的函数。
  */
-declare const throttle: (func: (...args: any[]) => any, time?: number) => (this: unknown, ...args: any[]) => void;
+declare const throttle: (fn: (...args: any[]) => any, time?: number) => (this: unknown, ...args: any[]) => void;
 
 type TimeFormatItem = 'y' | 'm' | 'd' | 'h' | 'M' | 's';
 /**
