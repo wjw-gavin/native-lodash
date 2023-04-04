@@ -136,6 +136,7 @@ obj === cloneDeepObj  // => false
  * @description 创建一个 debounced（防抖动）函数，该函数会从上一次被调用后，延迟 wait 毫秒后调用 func 方法
  * @param {Function} fn 需要防抖的函数
  * @param {number} ms 毫秒数
+ * @param {immediate} ms 是否立即执行，默认 false
  */
 
 // 使用
@@ -440,10 +441,9 @@ queryParams(query, true, 'indices')
 ### throttle
 ```js
 /**
- * @description 创建一个节流函数，在 wait 秒内最多执行 func 一次的函数
- * @param {Function} func 要节流的函数
- * @param {Number} wait 需要节流的毫秒。
- * @return Boolean
+ * @description 创建一个节流函数，在 time 秒内最多执行 fn 一次的函数
+ * @param {Function} fn 要节流的函数
+ * @param {Number} time 需要节流的毫秒
  */
 
 // 使用
