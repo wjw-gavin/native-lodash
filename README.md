@@ -143,7 +143,7 @@ obj === cloneDeepObj  // => false
 import { debounce } from 'native-lodash'
 
 // 避免窗口在变动时出现昂贵的计算开销。
-jQuery(window).on('resize', debounce(calculateLayoutFun, 300));
+jQuery(window).on('resize', debounce(updateFun, 300));
 ```
 ### delay
 ```js
@@ -450,7 +450,7 @@ queryParams(query, true, 'indices')
 import { throttle } from 'native-lodash'
 
 // 避免在滚动时过分的更新定位
-jQuery(window).on('scroll', throttle(updatePositionFun, 300));
+jQuery(window).on('scroll', throttle(updateFun, 300));
 ```
 ### timeFormat
 ```js
