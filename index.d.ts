@@ -60,6 +60,9 @@ declare const cloneDeep: <T extends Record<string, any> | null | undefined>(obj:
 
 /**
  * 创建一个 debounced（防抖动）函数，该函数会从上一次被调用后，延迟 wait 毫秒后调用 func 方法
+ * @param {Function} fn 需要防抖的函数
+ * @param {number} ms 毫秒数
+ * @param {immediate} ms 是否立即执行
  */
 declare const debounce: (fn: (...args: any[]) => any, ms?: number, immediate?: boolean) => (this: unknown, ...args: any[]) => void;
 
@@ -151,6 +154,8 @@ declare function queryParams(data?: TObject, isPrefix?: boolean, arrayFormat?: A
 
 /**
  * 创建一个节流函数，在 wait 秒内最多执行 func 一次的函数。
+ * @param {Function} fn 需要节流的函数
+ * @param {number} time 毫秒数
  */
 declare const throttle: (fn: (...args: any[]) => any, time?: number) => (this: unknown, ...args: any[]) => void;
 
