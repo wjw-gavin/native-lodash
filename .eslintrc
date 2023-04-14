@@ -1,6 +1,6 @@
 {
   "root": true,
-  "extends": "@wjw-gavin/eslint-config",
+  "extends": "@offbeat-ui/eslint-config",
   "rules": {
     "unicorn/prefer-number-properties": "off"
   }
