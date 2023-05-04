@@ -48,7 +48,7 @@
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-terser": "^0.4.1",
     "@types/node": "^18.14.6",
-    "bumpp": "^8.2.1",
+    "bumpp": "^9.1.0",
     "cz-git": "^1.5.3",
     "esbuild": "^0.17.11",
     "eslint": "^8.35.0",
