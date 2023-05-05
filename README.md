@@ -55,6 +55,7 @@ console.log(moneyFormat(money, 2))
 1. [delay](#delay)
 1. [desensitize](#desensitize)
 1. [download](#download)
+1. [downloadImage](#downloadimage)
 1. [eq](#eq)
 1. [flattenDeep](#flattendeep)
 1. [getUa](#getua)
@@ -181,8 +182,9 @@ desensitize(mobile, 1, 1)
 ### download
 ```js
 /**
- * @description: 根据链接使用 a 标签下载文件
- * @param {String} href  下载链接
+ * @description: 根据地址使用 a 标签下载文件
+ * 如需下载图片请使用 downloadImage
+ * @param {String} href  文件链接
  * @param {String} title 文件名称
  */
 
@@ -191,6 +193,21 @@ import { download } from 'native-lodash'
 
 download(href, title)
 ```
+
+### downloadImage
+```js
+/**
+ * @description: 根据图片地址下载图片
+ * @param {String} src  图片地址
+ * @param {String} title 下载图片名称
+ */
+
+// 使用
+import { downloadImage } from 'native-lodash'
+
+downloadImage(src, title)
+```
+
 ### eq
 ```js
 /**
