@@ -212,7 +212,8 @@ declare function uniqBy<T>(arr: T[], iteratee?: any): T[];
 declare function desensitize(value: Numeric, start?: number, end?: number, str?: string): Numeric;
 
 /**
- * @description: 根据地址下载文件
+ * @description: 根据地址下载文件（浏览器不支持打开的格式文件）
+ * 如需下载图片请使用 downloadImage
  * @param {String} href  下载链接
  * @param {String} title 文件名称
  */
