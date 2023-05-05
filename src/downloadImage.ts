@@ -16,7 +16,7 @@ export function downloadIamge(src: string, title?: string) {
     const context = canvas.getContext('2d')
     context?.drawImage(image, 0, 0, image.width, image.height)
 
-    //得到图片的base64编码数据
+    // 得到图片的base64编码数据
     const url = canvas.toDataURL('image/png')
     const a = document.createElement('a')
     const event = new MouseEvent('click')
