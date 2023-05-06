@@ -5,4 +5,5 @@ index.html
 .DS_Store
 dist-ssr
 *.local
+index.d.ts
 yarn-error.log
