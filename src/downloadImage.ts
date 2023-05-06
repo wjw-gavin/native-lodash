@@ -3,7 +3,7 @@
  * @param {String} src  下载图片链接
  * @param {String} title  图片名称
  */
-export function downloadIamge(src: string, title?: string) {
+export function downloadImage(src: string, title?: string) {
   const image = new Image()
 
   // 解决跨域 Canvas 污染问题
