@@ -61,7 +61,7 @@
     "rollup-plugin-esbuild": "^5.0.0",
     "throttle-debounce": "5.0.0",
     "typescript": "^5.0.4",
-    "vitest": "^0.25.8"
+    "vitest": "^0.31.0"
   },
   "config": {
     "commitizen": {
