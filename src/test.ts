@@ -107,3 +107,10 @@ export const isFunction = (func: unknown): func is Function =>
  * 是否是布尔 true 或者是字符 'true'
  */
 export const isTrue = (val: unknown) => val === true || val === 'true'
+
+/**
+ * 是否是 URL
+ */
+export const isURL = (url: string): boolean => {
+  return /^((ht|f)tps?):\/\/?/.test(url)
+}
