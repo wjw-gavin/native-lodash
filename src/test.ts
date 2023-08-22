@@ -114,3 +114,8 @@ export const isTrue = (val: unknown) => val === true || val === 'true'
 export const isURL = (url: string): boolean => {
   return /^((ht|f)tps?):\/\/?/.test(url)
 }
+
+/**
+ * 是否在浏览器中
+ */
+export const inBrowser = typeof window !== 'undefined'

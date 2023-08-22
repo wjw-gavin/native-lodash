@@ -109,6 +109,7 @@ isCode,      // 是否是验证码，长度默认为6，第二个参数可修改
 isFunction   // 是否是函数
 isTrue       // 是否是布尔 true 或者是字符 'true'
 isURL        // 是否是 URL
+inBrowser    // 是否在浏览器
 ```
 ### cloneDeep
 ```js
