@@ -53,6 +53,7 @@ console.log(moneyFormat(money, 2))
 1. [cloneDeep](#clonedeep)
 1. [debounce](#debounce)
 1. [delay](#delay)
+1. [later](#later)
 1. [desensitize](#desensitize)
 1. [download](#download)
 1. [downloadImage](#downloadimage)
@@ -157,6 +158,21 @@ jQuery(window).on('resize', debounce(updateFun, 300));
  * @param {...*} [args] 会在调用时传入到 func 的参数。
  * @returns {number} 返回计时器 id
  */
+```
+### later
+```js
+/**
+ * @description 延迟 later 毫秒后执行，返回 Promise。
+ * @param {number} later 要延迟的毫秒数
+ * @returns {Promise} Promise
+ */
+
+// 使用
+import { later } from 'native-lodash'
+
+// 1000ms 后继续执行
+await later(1000)
+// ...
 ```
 ### desensitize
 ```js
