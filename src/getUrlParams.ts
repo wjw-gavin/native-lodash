@@ -1,11 +1,11 @@
 /**
  * @description 获取 url 中指定参数
  * @param {string} name 要获取的参数名
- * @param {string} url 指定url，默认 location.ref
+ * @param {string} url 指定url，默认 location.href
  * @returns {string | null}
  */
 
-export function getUrlParams(name: string, url: string) {
+export function getUrlParams(name: string, url: string): string | null {
   const reg = new RegExp(`(^|&)${name}=([^&]*)(&|$)`)
   let result = null
 
