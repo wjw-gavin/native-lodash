@@ -1,19 +1,10 @@
 import type { TObject } from './types'
-/**
- * Checks if key is a direct property of object. Key may be a path of a value separated by .
- *
- * @example
- *
- * const object = { a: 1, b: 'settings', c: { d: 'test' } }
- *
- * const result = has(object, 'a')
- * output: true
- *
- * const result = has(object, 'c.d')
- * output: true
- */
 
 const hasOwnProperty = Object.prototype.hasOwnProperty
+
+/**
+ * @description Checks if key is a direct property of object. Key may be a path of a value separated by .
+ */
 
 export const has = (obj: TObject, key: string): boolean => {
   const keyParts = key.split('.')
@@ -21,7 +12,7 @@ export const has = (obj: TObject, key: string): boolean => {
   return (
     !!obj &&
     (keyParts.length > 1
-      ? has(obj[key.split('.')[0]] as TObject, keyParts.slice(1).join('.'))
+      ? has(obj[key.split('.')[0]], keyParts.slice(1).join('.'))
       : hasOwnProperty.call(obj, key))
   )
 }

@@ -11,7 +11,7 @@ export function delay(func: (...args: any[]) => any, wait = 0, ...args: any[]) {
   return setTimeout(func, wait, ...args)
 }
 
-export function later(delay = 0): Promise<void> {
+export function later(delay = 0) {
   return new Promise((resolve) => {
     setTimeout(resolve, delay)
   })

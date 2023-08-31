@@ -7,12 +7,11 @@ function _isObject(val: unknown): boolean {
 
 /**
  * @description 判断对象或数组是否相等。
- * @param {*} value 要比较的值
- * @param {*} other 另一个要比较的值
- * @returns {boolean}
+ * @param value 要比较的值
+ * @param other 另一个要比较的值
  */
 
-export function isEqual(value: TObject, other: TObject): boolean {
+export function isEqual(value: TObject, other: TObject) {
   // 两个数据有任何一个不是对象或数组
   if (!_isObject(value) || !_isObject(other)) {
     return value === other

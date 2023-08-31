@@ -1,7 +1,7 @@
 /**
  * @Description: 根据图片地址下载图片
- * @param {String} src  下载图片链接
- * @param {String} title  图片名称
+ * @param src  下载图片链接
+ * @param title  图片名称
  */
 export function downloadImage(src: string, title?: string) {
   const image = new Image()

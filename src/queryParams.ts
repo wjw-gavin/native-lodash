@@ -4,9 +4,9 @@ import type { TObject } from './types'
 type ArrayFormat = 'indices' | 'brackets' | 'repeat' | 'comma'
 /**
  * @description 对象转url参数
- * @param {object} data,对象
- * @param {Boolean} isPrefix,是否自动加上"?"
- * @param {ArrayFormat} arrayFormat 规则 indices|brackets|repeat|comma
+ * @param data 对象
+ * @param isPrefix 是否自动加上"?"
+ * @param arrayFormat 规则 indices|brackets|repeat|comma
  */
 export function queryParams(
   data: TObject = {},

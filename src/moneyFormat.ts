@@ -3,12 +3,11 @@ import type { Numeric } from './types'
 
 /**
  * @description 金额格式化
- * @param {number|string} number 要格式化的数字
- * @param {number} decimals 保留几位小数
- * @returns {string} 格式化后的数字
+ * @param number 要格式化的数字
+ * @param decimals 保留几位小数
  */
 
-export function moneyFormat(number: Numeric, decimals = 0): string {
+export function moneyFormat(number: Numeric, decimals = 0) {
   number = `${number}`.replace(/[^\d+-Ee]/g, '')
   const n = !isFinite(+number) ? 0 : +number
   const prec = !isFinite(+decimals) ? 0 : Math.abs(decimals)

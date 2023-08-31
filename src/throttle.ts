@@ -1,7 +1,5 @@
 /**
- * 创建一个节流函数，在 wait 秒内最多执行 func 一次的函数。
- * @param {Function} fn 需要节流的函数
- * @param {number} time 毫秒数
+ * @description 创建一个节流函数，在 wait 秒内最多执行 func 一次的函数。
  */
 
 export const throttle = (fn: (...args: any[]) => any, time = 0) => {

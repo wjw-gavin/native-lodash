@@ -1,6 +1,5 @@
 /**
  * @description 获取当前网页所在的运行环境
- * @returns {IUa} IUa
  */
 
 const ua = window.navigator.userAgent.toLowerCase()

@@ -1,8 +1,8 @@
 /**
  * @description 全局唯一标识
- * @param {Number} len uuid的长度
- * @param {String} firstLetter 将首位设置为某个字母，默认为 u
- * @param {Nubmer} radix 生成uuid的基数(意味着返回的字符串都是这个基数),2-二进制,8-八进制,10-十进制,16-十六进制,默认62
+ * @param len uuid的长度
+ * @param firstLetter 将首位设置为某个字母，默认为 u
+ * @param radix 生成 uuid 的基数(意味着返回的字符串都是这个基数),2-二进制,8-八进制,10-十进制,16-十六进制,默认62
  */
 
 export function guid(len = 32, firstLetter = 'u', radix = 62) {
@@ -26,6 +26,7 @@ export function guid(len = 32, firstLetter = 'u', radix = 62) {
       }
     }
   }
+
   // 移除第一个字符,并用字母替代,因为第一个字符为数值时,该guuid不能用作id或者class
   if (firstLetter) {
     uuid.shift()
