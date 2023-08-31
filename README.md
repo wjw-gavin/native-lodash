@@ -50,6 +50,7 @@ console.log(moneyFormat(money, 2))
 # 使用文档
 
 1. [isX](#isx)
+1. [clipboard](#clipboard)
 1. [cloneDeep](#clonedeep)
 1. [debounce](#debounce)
 1. [delay](#delay)
@@ -112,6 +113,22 @@ isTrue       // 是否是布尔 true 或者是字符 'true'
 isURL        // 是否是 URL
 inBrowser    // 是否在浏览器
 ```
+### clipboard
+```js
+/**
+ * @description 剪贴板，返回一个 Promise
+ */
+
+// 使用
+import { clipboard } from 'native-lodash'
+
+// 必须由用户主动触发
+const handleClipboard = async () => {
+  await clipboard()
+  // something...
+}
+
+```
 ### cloneDeep
 ```js
 /**
@@ -132,7 +149,6 @@ obj === cloneObj // => true
 const cloneDeepObj = cloneDeep(obj)
 cloneDeepObj.name = 'wjw'
 obj === cloneDeepObj  // => false
-
 ```
 ### debounce
 ```js
