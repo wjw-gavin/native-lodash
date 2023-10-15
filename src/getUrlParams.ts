@@ -4,7 +4,7 @@
  * @param url 指定url，默认 location.href
  */
 
-export function getUrlParams(name: string, url: string) {
+export function getUrlParams(name: string, url?: string) {
   const reg = new RegExp(`(^|&)${name}=([^&]*)(&|$)`)
   let result = null
 

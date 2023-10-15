@@ -5,8 +5,8 @@ import type { TObject } from './types'
  * @param url 指定url，默认 location.href
  */
 
-export function getUrlAllParams(url: string) {
-  url = url ? url : window.location.href
+export function getUrlAllParams(url?: string) {
+  url = url ? url : decodeURIComponent(window.location.href)
   const pa = url.slice(Math.max(0, url.indexOf('?') + 1)),
     arr = pa.split('&'),
     result: TObject = {}
