@@ -153,7 +153,7 @@ obj === cloneDeepObj  // => false
 ### debounce
 ```js
 /**
- * @description 创建一个 debounced（防抖动）函数，该函数会从上一次被调用后，延迟 wait 毫秒后调用 func 方法
+ * @description 创建一个 debounced（防抖）函数，该函数会在延迟 wait 毫秒后调用 func 方法
  * @param {Function} fn 需要防抖的函数
  * @param {number} ms 毫秒数
  * @param {immediate} ms 是否立即执行，默认 false
