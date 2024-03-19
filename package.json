@@ -47,11 +47,11 @@
     "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-terser": "^0.4.4",
-    "@types/node": "^20.11.16",
-    "bumpp": "^9.3.0",
-    "cz-git": "^1.8.0",
-    "esbuild": "^0.18.20",
-    "eslint": "^8.56.0",
+    "@types/node": "^20.11.29",
+    "bumpp": "^9.4.0",
+    "cz-git": "^1.9.0",
+    "esbuild": "^0.20.2",
+    "eslint": "^8.57.0",
     "husky": "^8.0.3",
     "jsdom": "^22.1.0",
     "nano-staged": "^0.8.0",
@@ -59,9 +59,8 @@
     "rollup": "^3.29.4",
     "rollup-plugin-dts": "^5.3.1",
     "rollup-plugin-esbuild": "^5.0.0",
-    "throttle-debounce": "5.0.0",
-    "typescript": "^5.3.3",
-    "vitest": "^0.32.4"
+    "typescript": "^5.4.2",
+    "vitest": "^1.4.0"
   },
   "config": {
     "commitizen": {
