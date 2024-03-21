@@ -1,6 +1,6 @@
 # 说明
 
-一些常用的 `js` 工具库。
+Popular frontend utility library, written in TypeScript.
 
 # 安装使用
 
