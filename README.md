@@ -54,7 +54,6 @@ console.log(moneyFormat(money, 2))
 1. [cloneDeep](#clonedeep)
 1. [debounce](#debounce)
 1. [delay](#delay)
-1. [later](#later)
 1. [desensitize](#desensitize)
 1. [download](#download)
 1. [downloadImage](#downloadimage)
@@ -66,6 +65,7 @@ console.log(moneyFormat(money, 2))
 1. [groupBy](#groupby)
 1. [guid](#guid)
 1. [has](#has)
+1. [later](#later)
 1. [moneyFormat](#moneyformat)
 1. [omit](#omit)
 1. [queryParams](#queryparams)
@@ -107,7 +107,7 @@ isCarNo,     // 是否是车牌号，包括新能源
 isEmpty,     // 是否是空的值：字符串、对象、数组
 isObject,    // 是否是对象
 isArray,     // 是否是数组
-isCode,      // 是否是验证码，长度默认为6，第二个参数可修改code的校验长度
+isCode,      // 是否是验证码，长度默认为6，第二个参数可修改 code 的校验长度
 isFunction   // 是否是函数
 isTrue       // 是否是布尔 true 或者是字符 'true'
 isURL        // 是否是 URL
@@ -175,21 +175,7 @@ jQuery(window).on('resize', debounce(updateFun, 300));
  * @returns {number} 返回计时器 id
  */
 ```
-### later
-```js
-/**
- * @description 延迟 later 毫秒后执行，返回 Promise。
- * @param {number} later 要延迟的毫秒数
- * @returns {Promise} Promise
- */
 
-// 使用
-import { later } from 'native-lodash'
-
-// 1000ms 后继续执行
-await later(1000)
-// ...
-```
 ### desensitize
 ```js
 /**
@@ -409,7 +395,7 @@ guid(16, 'g')
 ### has
 ```js
 /**
- * @description 检查 path 是否是object对象的直接或继承属性
+ * @description 检查 path 是否是 Object 的直接或继承属性
  */
 
 // 使用
@@ -422,6 +408,21 @@ const result = has(object, 'a')
 
 const result = has(object, 'c.d')
 // => true
+```
+### later
+```js
+/**
+ * @description 延迟 later 毫秒后执行，返回 Promise。
+ * @param {number} later 要延迟的毫秒数
+ * @returns {Promise} Promise
+ */
+
+// 使用
+import { later } from 'native-lodash'
+
+// 1000ms 后继续执行
+await later(1000)
+// ...
 ```
 ### moneyFormat
 ```js
@@ -444,7 +445,7 @@ moneyFormat(3002.245, 2)
 ### omit
 ```js
 /**
- * @description 返回一个对象，这个对象由忽略属性之外的object自身和继承的可枚举属性组成。（注：可以理解为删除object对象的属性）。
+ * @description 返回一个对象，这个对象由忽略属性之外的 Object 自身和继承的可枚举属性组成。（注：可以理解为删除 Object 的属性）。
  * @param {Object} object 目标对象.
  * @param {string|string[]} props 要被忽略的属性
  * @returns {Object} 返回新对象
@@ -464,8 +465,8 @@ omit(object, 'a')
 ### queryParams
 ```js
 /**
- * @description 对象转url参数
- * @param {object} data,对象
+ * @description 对象转 url 参数
+ * @param {object} data, Object
  * @param {Boolean} isPrefix,是否自动加上"?"
  * @param {string} arrayFormat 规则 indices|brackets|repeat|comma，默认 brackets
  * e.g. { ids: [1, 2, 3] }
@@ -508,7 +509,7 @@ jQuery(window).on('scroll', throttle(updateFun, 300));
 /**
  * @description 格式化时间
  * @param {String|Number} timestamp 需要格式化的时间戳
- * @param {String} format 格式化规则 yyyy-mm-dd hh:MM:ss,可自定义组合 默认yyyy-mm-dd
+ * @param {String} format 格式化规则 yyyy-mm-dd hh:MM:ss,可自定义组合 默认 yyyy-mm-dd
  * @returns {string} 返回格式化后的字符串
  */
 
@@ -528,7 +529,7 @@ timeFormat(timestamp, 'yyyy/mm/dd')
 /**
  * @description 时间戳转为多久之前
  * @param {String | Number} timestamp 时间戳
- * @param {String} format 格式化规则,超出一定时间范围，返回固定的时间格式，同timeFormat中format
+ * @param {String} format 格式化规则,超出一定时间范围，返回固定的时间格式，同 timeFormat 中 format
  * @returns {string} 转化后的内容
  */
 
