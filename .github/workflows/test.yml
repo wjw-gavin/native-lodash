@@ -12,22 +12,6 @@ on:
   workflow_dispatch:
 
 jobs:
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Install pnpm
-        run: corepack enable
-
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-          cache: pnpm
-
-      - name: Install dependencies
-        run: pnpm install
-
   test:
     runs-on: macos-14
     steps:
