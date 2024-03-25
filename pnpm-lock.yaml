@@ -66,7 +66,7 @@ devDependencies:
     specifier: ^5.0.0
     version: 5.0.0(esbuild@0.20.2)(rollup@3.29.4)
   typescript:
-    specifier: ^5.4.2
+    specifier: ^5.4.3
     version: 5.4.3
   vitest:
     specifier: ^1.4.0
