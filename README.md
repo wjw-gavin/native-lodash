@@ -1,6 +1,6 @@
 # 说明
 
-Popular frontend utility library, written in TypeScript.
+前端常用的工具库，`typescript` 编写。
 
 # 安装使用
 
