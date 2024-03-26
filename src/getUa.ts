@@ -2,8 +2,6 @@
  * @description 获取当前网页所在的运行环境
  */
 
-const ua = window.navigator.userAgent.toLowerCase()
-
 export function getUa():
   | 'ios'
   | 'android'
@@ -14,6 +12,8 @@ export function getUa():
   | 'feishu'
   | 'mobile'
   | undefined {
+  const ua = window.navigator.userAgent.toLowerCase()
+
   /** ios */
   if (/iphone|ipod|ipad/i.test(ua)) {
     return 'ios'
