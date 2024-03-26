@@ -11,11 +11,11 @@ export function guid(len = 32, firstLetter = 'u', radix = 62) {
   const uuid = []
 
   if (len) {
-    // 如果指定uuid长度,只是取随机的字符,0|x为位运算,能去掉x的小数位,返回整数位
+    // 如果指定uuid长度，只是取随机的字符，0|x 为位运算，能去掉x的小数位，返回整数位
     for (let i = 0; i < len; i++) uuid[i] = chars[0 | (Math.random() * radix)]
   } else {
     let r
-    // rfc4122标准要求返回的uuid中,某些位为固定的字符
+    // rfc4122 标准要求返回的 uuid 中，某些位为固定的字符
     uuid[8] = uuid[13] = uuid[18] = uuid[23] = '-'
     uuid[14] = '4'
 
@@ -27,7 +27,7 @@ export function guid(len = 32, firstLetter = 'u', radix = 62) {
     }
   }
 
-  // 移除第一个字符,并用字母替代,因为第一个字符为数值时,该guuid不能用作id或者class
+  // 移除第一个字符，并用字母替代，因为第一个字符为数值时，该 guid 不能用作 id 或者 class
   if (firstLetter) {
     uuid.shift()
     return `${firstLetter}${uuid.join('')}`

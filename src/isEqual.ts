@@ -22,15 +22,15 @@ export function isEqual(value: TObject, other: TObject) {
   }
 
   // 两个都是对象或数组，而且不相等
-  // 1.先比较value和other的key的个数，是否一样
+  // 1.先比较 value 和 other 的 key 的个数，是否一样
   const valueKeys = Object.keys(value)
   const otherKeys = Object.keys(other)
   if (valueKeys.length !== otherKeys.length) {
     return false
   }
 
-  // 如果key的个数相等,就是第二步
-  // 2.以value为基准，和other依次递归比较
+  // 如果 key 的个数相等,就是第二步
+  // 2.以 value 为基准，和 other 依次递归比较
   // eslint-disable-next-line no-restricted-syntax
   for (const key in value) {
     const res = isEqual(value[key] as TObject, other[key] as TObject)

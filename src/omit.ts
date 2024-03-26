@@ -2,7 +2,7 @@ import { isObject, isString } from '.'
 import type { TObject } from './types'
 
 /**
- * @description 返回一个对象，这个对象由忽略属性之外的object自身和继承的可枚举属性组成。（注：可以理解为删除object对象的属性）。
+ * @description 返回一个对象，这个对象由忽略属性之外的自身和继承的可枚举属性组成。（注：可以理解为删除对象的属性）。
  * @param obj 目标对象.
  * @param props 要被忽略的属性
  * @example

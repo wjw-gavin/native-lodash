@@ -1,7 +1,7 @@
 import { isFunction } from '.'
 
 /**
- * @description 延迟 wait 毫秒后调用 func。 调用时，任何附加的参数会传给func。
+ * @description 延迟 wait 毫秒后调用 func。 调用时，任何附加的参数会传给 func。
  */
 
 export function delay(func: (...args: any[]) => any, wait = 0, ...args: any[]) {
