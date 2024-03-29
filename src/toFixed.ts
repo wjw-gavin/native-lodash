@@ -7,5 +7,5 @@ import type { Numeric } from './types'
  */
 export function toFixed(num: Numeric, digit = 2) {
   const pow = 10 ** digit
-  return Math.round(Number(num) * pow) / pow
+  return (Math.round(Number(num) * pow) / pow).toFixed(digit)
 }
