@@ -100,8 +100,8 @@ export function isCode(value: string, len = 6) {
 /**
  * 是否函数方法
  */
-export const isFunction = (func: unknown): func is Function =>
-  typeof func === 'function'
+export const isFunction = (fn: unknown): fn is Function =>
+  typeof fn === 'function'
 
 /**
  * 是否是布尔 true 或者是字符 'true'

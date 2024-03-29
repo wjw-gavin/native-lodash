@@ -153,7 +153,7 @@ obj === cloneDeepObj  // => false
 ### debounce
 ```js
 /**
- * @description 创建一个 debounced（防抖）函数，该函数会在延迟 wait 毫秒后调用 func 方法
+ * @description 创建一个 debounced（防抖）函数，该函数会在延迟 wait 毫秒后调用 fn 方法
  * @param {Function} fn 需要防抖的函数
  * @param {number} ms 毫秒数
  * @param {immediate} ms 是否立即执行，默认 false
@@ -168,10 +168,10 @@ jQuery(window).on('resize', debounce(updateFun, 300));
 ### delay
 ```js
 /**
- * @description 延迟 wait 毫秒后调用 func。 调用时，任何附加的参数会传给func。
- * @param {Function} func 要延迟的函数
+ * @description 延迟 wait 毫秒后调用 fn。 调用时，任何附加的参数会传给func。
+ * @param {Function} fn 要延迟的函数
  * @param {number} wait 要延迟的毫秒数
- * @param {...*} [args] 会在调用时传入到 func 的参数。
+ * @param {...*} [args] 会在调用时传入到 fn 的参数。
  * @returns {number} 返回计时器 id
  */
 ```
@@ -553,7 +553,7 @@ timeFrom(timestamp)
  * digit: 保留位数，默认2位
  * @param {String | Number} num 数值
  * @param {Number} digit 保留位数，默认2位
- * @return {Number}
+ * @return {String}
  */
 
 // 使用

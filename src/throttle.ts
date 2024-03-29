@@ -1,5 +1,5 @@
 /**
- * @description 创建一个节流函数，在 wait 秒内最多执行 func 一次的函数。
+ * @description 创建一个节流函数，在 wait 秒内最多执行 fn 一次的函数。
  */
 
 export const throttle = (fn: (...args: any[]) => any, time = 0) => {
