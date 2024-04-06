@@ -1,4 +1,4 @@
-modules.exports = [
+module.exports = [
   '@offbeat-ui/eslint-config',
   {
     rules: {
