@@ -1,7 +1,0 @@
-{
-  "root": true,
-  "extends": "@offbeat-ui/eslint-config",
-  "rules": {
-    "unicorn/prefer-number-properties": "off"
-  }
-}
