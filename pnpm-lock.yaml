@@ -60,8 +60,8 @@ devDependencies:
     specifier: ^4.14.0
     version: 4.14.0
   rollup-plugin-dts:
-    specifier: ^5.3.1
-    version: 5.3.1(rollup@4.14.0)(typescript@5.4.3)
+    specifier: ^6.1.0
+    version: 6.1.0(rollup@4.14.0)(typescript@5.4.3)
   rollup-plugin-esbuild:
     specifier: ^5.0.0
     version: 5.0.0(esbuild@0.20.2)(rollup@4.14.0)
@@ -4120,12 +4120,12 @@ packages:
     engines: {iojs: '>=1.0.0', node: '>=0.10.0'}
     dev: true
 
-  /rollup-plugin-dts@5.3.1(rollup@4.14.0)(typescript@5.4.3):
-    resolution: {integrity: sha512-gusMi+Z4gY/JaEQeXnB0RUdU82h1kF0WYzCWgVmV4p3hWXqelaKuCvcJawfeg+EKn2T1Ie+YWF2OiN1/L8bTVg==}
-    engines: {node: '>=v14.21.3'}
+  /rollup-plugin-dts@6.1.0(rollup@4.14.0)(typescript@5.4.3):
+    resolution: {integrity: sha512-ijSCPICkRMDKDLBK9torss07+8dl9UpY9z1N/zTeA1cIqdzMlpkV3MOOC7zukyvQfDyxa1s3Dl2+DeiP/G6DOw==}
+    engines: {node: '>=16'}
     peerDependencies:
-      rollup: ^3.0
-      typescript: ^4.1 || ^5.0
+      rollup: ^3.29.4 || ^4
+      typescript: ^4.5 || ^5.0
     dependencies:
       magic-string: 0.30.8
       rollup: 4.14.0
