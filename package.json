@@ -41,7 +41,6 @@
   "devDependencies": {
     "@commitlint/cli": "^19.2.1",
     "@commitlint/config-conventional": "^19.1.0",
-    "@offbeat-ui/eslint-config": "^1.1.0",
     "@rollup/plugin-alias": "^5.1.0",
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-json": "^6.1.0",
@@ -58,7 +57,7 @@
     "prettier": "^3.2.5",
     "rollup": "^4.14.0",
     "rollup-plugin-dts": "^6.1.0",
-    "rollup-plugin-esbuild": "^5.0.0",
+    "rollup-plugin-esbuild": "^6.1.1",
     "typescript": "^5.4.4",
     "vitest": "^1.4.0"
   },
@@ -68,7 +67,7 @@
     }
   },
   "nano-staged": {
-    "*.{js,ts,json}": [
+    "*.{js,ts,json,md,mjs}": [
       "eslint --fix",
       "prettier --write"
     ]

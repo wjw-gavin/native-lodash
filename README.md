@@ -16,7 +16,7 @@
   const mobile = '18688888888'
   console.log(nativeLodash.desensitize(mobile))
   // => 186****8888
-  
+
   // 金额格式化
   const money = 3002.345
   console.log(nativeLodash.moneyFormat(money))
@@ -47,6 +47,7 @@ console.log(moneyFormat(money))
 console.log(moneyFormat(money, 2))
 // => '3,002.25'
 ```
+
 # 使用文档
 
 1. [isX](#isx)
@@ -76,8 +77,8 @@ console.log(moneyFormat(money, 2))
 1. [trim](#trim)
 1. [uniqBy](#uniqby)
 
-
 ### isX
+
 ```js
 /**
  * @description 常用的校验方法
@@ -99,21 +100,23 @@ isEqual(deepObj, deepOther)
 // => true
 
 // 同理
-isEmail,     // 是否是邮箱
-isMobile,    // 是否是手机号
-isString,    // 是否是字符串
-isIdCard,    // 是否是身份证号
-isCarNo,     // 是否是车牌号，包括新能源
-isEmpty,     // 是否是空的值：字符串、对象、数组
-isObject,    // 是否是对象
-isArray,     // 是否是数组
-isCode,      // 是否是验证码，长度默认为6，第二个参数可修改 code 的校验长度
-isFunction   // 是否是函数
-isTrue       // 是否是布尔 true 或者是字符 'true'
-isURL        // 是否是 URL
-inBrowser    // 是否在浏览器
+isEmail // 是否是邮箱
+isMobile // 是否是手机号
+isString // 是否是字符串
+isIdCard // 是否是身份证号
+isCarNo // 是否是车牌号，包括新能源
+isEmpty // 是否是空的值：字符串、对象、数组
+isObject // 是否是对象
+isArray // 是否是数组
+isCode // 是否是验证码，长度默认为6，第二个参数可修改 code 的校验长度
+isFunction // 是否是函数
+isTrue // 是否是布尔 true 或者是字符 'true'
+isURL // 是否是 URL
+inBrowser // 是否在浏览器
 ```
+
 ### clipboard
+
 ```js
 /**
  * @description 剪贴板，返回一个 Promise
@@ -127,9 +130,10 @@ const handleClipboard = async () => {
   await clipboard()
   // something...
 }
-
 ```
+
 ### cloneDeep
+
 ```js
 /**
  * @description 深度克隆
@@ -145,12 +149,13 @@ const cloneObj = obj
 cloneObj.name = 'wjw'
 obj === cloneObj // => true
 
-
 const cloneDeepObj = cloneDeep(obj)
 cloneDeepObj.name = 'wjw'
-obj === cloneDeepObj  // => false
+obj === cloneDeepObj // => false
 ```
+
 ### debounce
+
 ```js
 /**
  * @description 创建一个 debounced（防抖）函数，该函数会在延迟 wait 毫秒后调用 fn 方法
@@ -163,9 +168,11 @@ obj === cloneDeepObj  // => false
 import { debounce } from 'native-lodash'
 
 // 避免窗口在变动时出现昂贵的计算开销。
-jQuery(window).on('resize', debounce(updateFun, 300));
+jQuery(window).on('resize', debounce(updateFun, 300))
 ```
+
 ### delay
+
 ```js
 /**
  * @description 延迟 wait 毫秒后调用 fn。 调用时，任何附加的参数会传给func。
@@ -177,6 +184,7 @@ jQuery(window).on('resize', debounce(updateFun, 300));
 ```
 
 ### desensitize
+
 ```js
 /**
  * @description 字符串脱敏（手机号，身份证，银行卡号、姓名等）
@@ -199,7 +207,9 @@ const mobile = '王小二'
 desensitize(mobile, 1, 1)
 // => 王*二
 ```
+
 ### download
+
 ```js
 /**
  * @description: 根据地址使用 a 标签下载文件
@@ -215,6 +225,7 @@ download(href, title)
 ```
 
 ### downloadImage
+
 ```js
 /**
  * @description: 根据图片地址下载图片
@@ -229,6 +240,7 @@ downloadImage(src, title)
 ```
 
 ### eq
+
 ```js
 /**
  * @description 使用 SameValueZero 比较两者的值，来确定它们是否相等。
@@ -240,25 +252,27 @@ downloadImage(src, title)
 // 使用
 import { eq } from 'native-lodash'
 
-const object = { 'a': 1 }
-const other = { 'a': 1 }
- 
+const object = { a: 1 }
+const other = { a: 1 }
+
 eq(object, object)
 // => true
- 
+
 eq(object, other)
 // => false
- 
+
 eq('a', 'a')
 // => true
- 
+
 eq('a', Object('a'))
 // => false
- 
+
 eq(NaN, NaN)
 // => true
 ```
+
 ### flattenDeep
+
 ```js
 /**
  * @description 将array递归为一维数组。
@@ -272,6 +286,7 @@ flattenDeep([1, [2, [3, [4]], 5]])
 ```
 
 ### getUa
+
 ```js
 /**
  * @description 获取当前网页所在的运行环境
@@ -295,6 +310,7 @@ const ua = getUa()
 ```
 
 ### getUrlAllParams
+
 ```js
 /**
  * @description 获取 url 中所有参数
@@ -308,7 +324,9 @@ const url = 'https://www.baidu.com?name=gavin&age=18'
 getUrlAllParams(url)
 // { name: 'gavin', age: '18'}
 ```
+
 ### getUrlParams
+
 ```js
 /**
  * @description 获取 url 中所有参数
@@ -325,7 +343,9 @@ getUrlParams('name', url)
 getUrlParams('age', url)
 // 18
 ```
+
 ### groupBy
+
 ```js
 /**
  * @description 对象数组根据某个字段分类，常用于 index 索引列表
@@ -360,7 +380,7 @@ const arr = [
 ]
 
 groupBy(arr, 'create_time')
-// => 
+// =>
 // {
 //   '2022-04-24': [
 //     { id: 1, state: 'online', create_time: '2022-04-24' }
@@ -374,7 +394,9 @@ groupBy(arr, 'create_time')
 //   ]
 // }
 ```
+
 ### guid
+
 ```js
 /**
  * @description 全局唯一标识
@@ -392,7 +414,9 @@ guid(16)
 guid(16, 'g')
 // => 首位字符为'g'的16为字符串
 ```
+
 ### has
+
 ```js
 /**
  * @description 检查 path 是否是 Object 的直接或继承属性
@@ -409,7 +433,9 @@ const result = has(object, 'a')
 const result = has(object, 'c.d')
 // => true
 ```
+
 ### later
+
 ```js
 /**
  * @description 延迟 later 毫秒后执行，返回 Promise。
@@ -424,7 +450,9 @@ import { later } from 'native-lodash'
 await later(1000)
 // ...
 ```
+
 ### moneyFormat
+
 ```js
 /**
  * @description 金额格式化
@@ -442,7 +470,9 @@ moneyFormat(3002.2345)
 moneyFormat(3002.245, 2)
 // => 3,002.25
 ```
+
 ### omit
+
 ```js
 /**
  * @description 返回一个对象，这个对象由忽略属性之外的 Object 自身和继承的可枚举属性组成。（注：可以理解为删除 Object 的属性）。
@@ -454,7 +484,7 @@ moneyFormat(3002.245, 2)
 // 使用
 import { omit } from 'native-lodash'
 
-const object = { 'a': 1, 'b': '2', 'c': 3 }
+const object = { a: 1, b: '2', c: 3 }
 
 omit(object, ['a', 'c'])
 // => { 'b': '2' }
@@ -462,7 +492,9 @@ omit(object, ['a', 'c'])
 omit(object, 'a')
 // => { 'b': '2', 'c': 3 }
 ```
+
 ### queryParams
+
 ```js
 /**
  * @description 对象转 url 参数
@@ -490,7 +522,9 @@ queryParams(query)
 queryParams(query, true, 'indices')
 // => ?a=a&c[0]=1&c[1]=2&c[2]=3'
 ```
+
 ### throttle
+
 ```js
 /**
  * @description 创建一个节流函数，在 time 秒内最多执行 fn 一次的函数
@@ -502,9 +536,11 @@ queryParams(query, true, 'indices')
 import { throttle } from 'native-lodash'
 
 // 避免在滚动时过分的更新定位
-jQuery(window).on('scroll', throttle(updateFun, 300));
+jQuery(window).on('scroll', throttle(updateFun, 300))
 ```
+
 ### timeFormat
+
 ```js
 /**
  * @description 格式化时间
@@ -524,7 +560,9 @@ timeFormat(timestamp)
 timeFormat(timestamp, 'yyyy/mm/dd')
 // => 2022/12/22
 ```
+
 ### timeFrom
+
 ```js
 /**
  * @description 时间戳转为多久之前
@@ -543,9 +581,10 @@ timeFrom(timestamp)
 
 // 根据时间差显示为：刚刚；几分钟前；几小时前；昨天；几天前；再往前显示如下说明：
 // 如果判断format有值，则再往前的时间显示为 format 格式，否则继续显示几个月前、几年前。
-
 ```
+
 ### toFixed
+
 ```js
 /**
  * @description: 重写 toFixed
@@ -569,7 +608,9 @@ toFixed(0.345, 2)
 toFixed(0.345, 0)
 // => 0
 ```
+
 ### trim
+
 ```js
 /**
  * @description 去除空格
@@ -594,6 +635,7 @@ trim(' 12 12 ', 'all')
 ```
 
 ### uniqBy
+
 ```js
 /**
  * @description 调用数组的每个元素以产生唯一性
@@ -618,14 +660,15 @@ const arr = [
 
 // 数组元素为对象去重
 uniqBy(arr, 'id')
-// => 
-  // [
-  //   { id: 1, name: 'cat' },
-  //   { id: 2, name: 'dog' },
-  //   { id: 3, name: 'tiger' }
-  // ]
+// =>
+// [
+//   { id: 1, name: 'cat' },
+//   { id: 2, name: 'dog' },
+//   { id: 3, name: 'tiger' }
+// ]
 ```
 
 # 参考
+
 [lodash](https://lodash.com)
 [uview](https://www.uviewui.com)
