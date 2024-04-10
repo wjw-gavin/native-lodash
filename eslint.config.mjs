@@ -1,5 +1,4 @@
-module.exports = [
-  '@offbeat-ui/eslint-config',
+export default [
   {
     rules: {
       'unicorn/prefer-number-properties': 'off'
