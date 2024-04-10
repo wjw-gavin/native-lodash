@@ -67,7 +67,7 @@
     }
   },
   "nano-staged": {
-    "*.{js,ts,json}": [
+    "*.{js,ts,json,md,mjs}": [
       "eslint --fix",
       "prettier --write"
     ]
