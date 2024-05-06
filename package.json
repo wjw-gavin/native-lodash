@@ -46,7 +46,7 @@
     "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-terser": "^0.4.4",
-    "@types/node": "^20.12.7",
+    "@types/node": "^20.12.8",
     "bumpp": "^9.4.0",
     "cz-git": "^1.9.1",
     "esbuild": "^0.20.2",
