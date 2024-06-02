@@ -50,7 +50,7 @@
     "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-terser": "^0.4.4",
-    "@types/node": "^20.12.12",
+    "@types/node": "^20.14.0",
     "bumpp": "^9.4.1",
     "cz-git": "^1.9.1",
     "esbuild": "^0.21.3",
