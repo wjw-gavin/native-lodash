@@ -64,9 +64,9 @@ export function isCarNo(value: string) {
 /**
  * 判断是否为空
  */
-export function isEmpty(val: unknown) {
+export function isEmpty(val: any) {
   return (
-    val !== '' ||
+    val === '' ||
     (val.constructor === Object && Object.keys(val).length === 0) ||
     (Array.isArray(val) && val.length === 0)
   )
