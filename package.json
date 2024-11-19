@@ -52,7 +52,7 @@
     "@rollup/plugin-terser": "^0.4.4",
     "@types/node": "^20.16.10",
     "bumpp": "^9.8.1",
-    "cz-git": "^1.9.4",
+    "cz-git": "^1.11.0",
     "esbuild": "^0.24.0",
     "eslint": "^9.11.1",
     "husky": "^9.1.6",
