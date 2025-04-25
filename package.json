@@ -39,9 +39,9 @@
     "release": "bumpp --commit --push --tag && npm publish"
   },
   "engines": {
-    "pnpm": ">= 9.15.5"
+    "pnpm": ">= 9.15.9"
   },
-  "packageManager": "pnpm@9.15.5",
+  "packageManager": "pnpm@9.15.9",
   "devDependencies": {
     "@commitlint/cli": "^19.7.1",
     "@commitlint/config-conventional": "^19.7.1",
