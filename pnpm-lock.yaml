@@ -36,8 +36,8 @@ importers:
         specifier: ^10.1.0
         version: 10.1.0
       cz-git:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.11.1
+        version: 1.11.1
       esbuild:
         specifier: ^0.25.0
         version: 0.25.0
@@ -924,8 +924,8 @@ packages:
     resolution: {integrity: sha512-ZgW+Jgdd7i52AaLYCriF8Mxqft0gD/R9i9wi6RWBhs1pqdPEzPjym7rvRKi397WmQFf3SlyUsszhw+VVCbx79Q==}
     engines: {node: '>=18'}
 
-  cz-git@1.11.0:
-    resolution: {integrity: sha512-FCNkpyVmNPX0P8kHtX8uoFcXsJ4bjivMXVS5vc/qCyM8jj+Tuqo6CXQjGQKwKl0Lk9VNz7o6JfPoU/mM/XhxqA==}
+  cz-git@1.11.1:
+    resolution: {integrity: sha512-QIhpsX8blMydkGcSSlSb4VKvu4qHNtxAWeN0N3TWDfQw7VbVHMLlAwmLm/YxVk60KKPy42O5ihe7E0gosTG2kg==}
     engines: {node: '>=v12.20.0'}
 
   dargs@8.1.0:
@@ -2534,7 +2534,7 @@ snapshots:
       '@asamuzakjp/css-color': 3.1.4
       rrweb-cssom: 0.8.0
 
-  cz-git@1.11.0: {}
+  cz-git@1.11.1: {}
 
   dargs@8.1.0: {}
 
