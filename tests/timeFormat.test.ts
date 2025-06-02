@@ -10,6 +10,7 @@ describe('timeFormat', () => {
     const M = date.getMinutes().toString().padStart(2, '0') // 分
     const s = date.getSeconds().toString().padStart(2, '0') // 秒
 
+    expect(timeFormat('2025-06-02')).toBe(`${y}-${m}-${d}`)
     expect(timeFormat(date.getTime())).toBe(`${y}-${m}-${d}`)
     expect(timeFormat(date.getTime(), 'yyyy/mm/dd')).toBe(`${y}/${m}/${d}`)
     expect(timeFormat(date.getTime(), 'yyyy-mm-dd hh:MM:ss')).toBe(
