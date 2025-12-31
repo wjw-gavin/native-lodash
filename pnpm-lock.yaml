@@ -18,8 +18,8 @@ importers:
         specifier: ^5.1.1
         version: 5.1.1(rollup@4.52.5)
       '@rollup/plugin-commonjs':
-        specifier: ^28.0.6
-        version: 28.0.6(rollup@4.52.5)
+        specifier: ^28.0.9
+        version: 28.0.9(rollup@4.52.5)
       '@rollup/plugin-json':
         specifier: ^6.1.0
         version: 6.1.0(rollup@4.52.5)
@@ -571,8 +571,8 @@ packages:
       rollup:
         optional: true
 
-  '@rollup/plugin-commonjs@28.0.6':
-    resolution: {integrity: sha512-XSQB1K7FUU5QP+3lOQmVCE3I0FcbbNvmNT4VJSj93iUjayaARrTQeoRdiYQoftAJBLrR9t2agwAd3ekaTgHNlw==}
+  '@rollup/plugin-commonjs@28.0.9':
+    resolution: {integrity: sha512-PIR4/OHZ79romx0BVVll/PkwWpJ7e5lsqFa3gFfcrFPWwLXLV39JVUzQV9RKjWerE7B845Hqjj9VYlQeieZ2dA==}
     engines: {node: '>=16.0.0 || 14 >= 14.17'}
     peerDependencies:
       rollup: ^2.68.0||^3.0.0||^4.0.0
@@ -1754,6 +1754,7 @@ packages:
   whatwg-encoding@3.1.1:
     resolution: {integrity: sha512-6qN4hJdMwfYBtE3YBTTHhoeuUrDBPZmbQaxWAqSALV/MeEnR5z1xd8UKud2RAkFoPkmB+hli1TZSnyi84xz1vQ==}
     engines: {node: '>=18'}
+    deprecated: Use @exodus/bytes instead for a more spec-conformant and faster implementation
 
   whatwg-mimetype@4.0.0:
     resolution: {integrity: sha512-QaKxh0eNIi2mE9p2vEdzfagOKHCcj1pJ56EEHGQOVxp8r9/iszLUUV7v89x9O1p/T+NlTM5W7jW6+cz4Fq1YVg==}
@@ -2216,7 +2217,7 @@ snapshots:
     optionalDependencies:
       rollup: 4.52.5
 
-  '@rollup/plugin-commonjs@28.0.6(rollup@4.52.5)':
+  '@rollup/plugin-commonjs@28.0.9(rollup@4.52.5)':
     dependencies:
       '@rollup/pluginutils': 5.2.0(rollup@4.52.5)
       commondir: 1.0.1
