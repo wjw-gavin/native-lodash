@@ -4,35 +4,35 @@ describe('timeFrom', () => {
   const date = new Date()
   const timestamp = date.getTime()
 
-  test('刚刚', () => {
+  test('just now', () => {
     expect(timeFrom(timestamp)).toBe('刚刚')
   })
 
-  test('几分钟前', () => {
+  test('minutes ago', () => {
     expect(timeFrom(timestamp - 60000)).toBe('1分钟前')
   })
 
-  test('几小时前', () => {
+  test('hours ago', () => {
     expect(timeFrom(timestamp - 3600000)).toBe('1小时前')
   })
 
-  test('昨天', () => {
+  test('yesterday', () => {
     expect(timeFrom(timestamp - 86400000)).toBe('昨天')
   })
 
-  test('几天前', () => {
+  test('days ago', () => {
     expect(timeFrom(timestamp - 172800000)).toBe('2天前')
   })
 
-  test('几个月前', () => {
+  test('months ago', () => {
     expect(timeFrom(timestamp - 2592000000)).toBe('1个月前')
   })
 
-  test('几年前', () => {
+  test('years ago', () => {
     expect(timeFrom(timestamp - 86400 * 365 * 1000)).toBe('1年前')
   })
 
-  test('超出一定时间范围，自定义时间格式', () => {
+  test('custom format for older dates', () => {
     const s = timestamp - 2592000000
     expect(timeFrom(s, 'yyyy-mm-dd')).toBe(timeFormat(s))
   })

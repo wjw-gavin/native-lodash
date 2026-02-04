@@ -1,43 +1,80 @@
-import { isArray, isObject } from '.'
-import type { TObject } from './types'
-
-function _isObject(val: unknown): boolean {
-  return isArray(val) || isObject(val)
-}
-
 /**
- * @description 判断对象或数组是否相等。
- * @param value 要比较的值
- * @param other 另一个要比较的值
+ * @description Check if two values are deeply equal, supporting Date, RegExp, Map, Set, Array, and plain objects
+ * @param value The value to compare
+ * @param other The other value to compare
  */
 
-export function isEqual(value: TObject, other: TObject) {
-  // 两个数据有任何一个不是对象或数组
-  if (!_isObject(value) || !_isObject(other)) {
-    return value === other
-  }
-  // 如果传的两个参数都是同一个对象或数组
+export function isEqual(value: unknown, other: unknown): boolean {
+  // Same reference or both primitives with same value
   if (value === other) {
     return true
   }
 
-  // 两个都是对象或数组，而且不相等
-  // 1.先比较 value 和 other 的 key 的个数，是否一样
+  // Handle NaN (NaN !== NaN in JS)
+  if (
+    typeof value === 'number' &&
+    typeof other === 'number' &&
+    Number.isNaN(value) &&
+    Number.isNaN(other)
+  ) {
+    return true
+  }
+
+  // If either is null/undefined or not object, they're not equal (already checked ===)
+  if (
+    value == null ||
+    other == null ||
+    typeof value !== 'object' ||
+    typeof other !== 'object'
+  ) {
+    return false
+  }
+
+  // Handle Date
+  if (value instanceof Date && other instanceof Date) {
+    return value.getTime() === other.getTime()
+  }
+
+  // Handle RegExp
+  if (value instanceof RegExp && other instanceof RegExp) {
+    return value.source === other.source && value.flags === other.flags
+  }
+
+  // Handle Map
+  if (value instanceof Map && other instanceof Map) {
+    if (value.size !== other.size) return false
+    for (const [k, v] of value) {
+      if (!other.has(k) || !isEqual(v, other.get(k))) return false
+    }
+    return true
+  }
+
+  // Handle Set
+  if (value instanceof Set && other instanceof Set) {
+    if (value.size !== other.size) return false
+    for (const v of value) {
+      if (!other.has(v)) return false
+    }
+    return true
+  }
+
+  // Type mismatch (e.g., Date vs plain object)
+  if (value.constructor !== other.constructor) {
+    return false
+  }
+
+  // Handle Array and plain objects
   const valueKeys = Object.keys(value)
   const otherKeys = Object.keys(other)
+
   if (valueKeys.length !== otherKeys.length) {
     return false
   }
 
-  // 如果 key 的个数相等,就是第二步
-  // 2.以 value 为基准，和 other 依次递归比较
-  // eslint-disable-next-line no-restricted-syntax
-  for (const key in value) {
-    const res = isEqual(value[key] as TObject, other[key] as TObject)
-    if (!res) {
-      return false
-    }
-  }
-
-  return true
+  return valueKeys.every((key) =>
+    isEqual(
+      (value as Record<string, unknown>)[key],
+      (other as Record<string, unknown>)[key]
+    )
+  )
 }

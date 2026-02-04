@@ -1,20 +1,31 @@
 import { isString } from '.'
 
+type Iteratee<T> = string | ((value: T) => unknown)
+
 /**
- * @description 调用数组的每个元素以产生唯一性
- * @param arr 目标数组
- * @param iteratee 迭代函数，调用每个元素
+ * @description Create a duplicate-free version of an array using iteratee for uniqueness comparison
+ * @param arr The target array
+ * @param iteratee The iteratee invoked per element (can be a property name string or a function)
  */
 
-export function uniqBy<T>(arr: T[], iteratee?: any) {
+export function uniqBy<T>(arr: T[], iteratee?: Iteratee<T>): T[] {
   if (!iteratee) return [...new Set(arr)]
 
-  const it = isString(iteratee) ? (val: any) => val[iteratee] : iteratee
+  const it = isString(iteratee)
+    ? (val: T) => (val as Record<string, unknown>)[iteratee]
+    : iteratee
 
-  return arr.reduce((pre: T[], cur) => {
-    if (!pre.some((item) => it(item) === it(cur))) {
-      pre.push(cur)
+  // Use Set for O(n) performance instead of O(n²)
+  const seen = new Set<unknown>()
+  const result: T[] = []
+
+  for (const item of arr) {
+    const key = it(item)
+    if (!seen.has(key)) {
+      seen.add(key)
+      result.push(item)
     }
-    return pre
-  }, [])
+  }
+
+  return result
 }

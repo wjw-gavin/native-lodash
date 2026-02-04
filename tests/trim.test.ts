@@ -1,19 +1,19 @@
 import { trim } from '../src'
 
 describe('trim', () => {
-  test('去除两端空格 both', () => {
+  test('trim both sides', () => {
     expect(trim(' 12 12 ')).toBe('12 12')
   })
 
-  test('去除左边空格 left', () => {
+  test('trim left side', () => {
     expect(trim(' 12 12 ', 'left')).toBe('12 12 ')
   })
 
-  test('去除右边空格 right', () => {
+  test('trim right side', () => {
     expect(trim(' 12 12 ', 'right')).toBe(' 12 12')
   })
 
-  test('去除所有空格 all', () => {
+  test('trim all whitespace', () => {
     expect(trim(' 12 12 ', 'all')).toBe('1212')
   })
 })

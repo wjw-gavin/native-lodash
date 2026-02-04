@@ -1,6 +1,6 @@
 import { has } from '../src'
 
-test('检查一个对象中是否包含某个key', () => {
+test('check if object contains key', () => {
   const obj = {
     a: 1,
     b: 'settings',

@@ -1,9 +1,9 @@
 import type { Numeric } from '../types'
 
-let _boundaryCheckingState = true // 是否进行越界检查的全局开关
+let _boundaryCheckingState = true // Global switch for boundary checking
 
 /**
- * 把错误的数据转正
+ * Strip floating point errors
  * @private
  * @example strip(0.09999999999999998)=0.1
  */
@@ -24,9 +24,9 @@ function digitLength(num: Numeric) {
 }
 
 /**
- * 把小数转成整数,如果是小数则放大成整数
+ * Convert decimal to integer by scaling
  * @private
- * @param {Numeric} num 输入数
+ * @param {Numeric} num Input number
  */
 function float2Fixed(num: Numeric) {
   if (!num.toString().includes('e')) {
@@ -37,9 +37,9 @@ function float2Fixed(num: Numeric) {
 }
 
 /**
- * 检测数字是否越界，如果越界给出提示
+ * Check if number exceeds safe integer bounds and warn if so
  * @private
- * @param {Numeric} num 输入数
+ * @param {Numeric} num Input number
  */
 function checkBoundary(num: Numeric) {
   if (
@@ -47,14 +47,14 @@ function checkBoundary(num: Numeric) {
     (Number(num) > Number.MAX_SAFE_INTEGER ||
       Number(num) < Number.MIN_SAFE_INTEGER)
   ) {
-    console.warn(`${num} 超出了精度限制，结果可能不正确`)
+    console.warn(`${num} exceeds safe integer bounds, result may be inaccurate`)
   }
 }
 
 /**
- * 把递归操作扁平迭代化
- * @param {number[]} arr 要操作的数字数组
- * @param {function} operation 迭代操作
+ * Flatten recursive operations into iteration
+ * @param {number[]} arr Array of numbers to operate on
+ * @param {function} operation The operation to perform
  * @private
  */
 function iteratorOperation(arr: any[], operation: any) {
@@ -69,7 +69,7 @@ function iteratorOperation(arr: any[], operation: any) {
 }
 
 /**
- * 高精度乘法
+ * High precision multiplication
  * @export
  */
 export function times(...nums: any[]) {
@@ -89,7 +89,7 @@ export function times(...nums: any[]) {
 }
 
 /**
- * 高精度加法
+ * High precision addition
  * @export
  */
 export function plus(...nums: any[]) {
@@ -98,14 +98,14 @@ export function plus(...nums: any[]) {
   }
 
   const [num1, num2] = nums
-  // 取最大的小数位
+  // Get the maximum decimal places
   const baseNum = 10 ** Math.max(digitLength(num1), digitLength(num2))
-  // 把小数都转为整数然后再计算
+  // Convert decimals to integers then calculate
   return (times(num1, baseNum) + times(num2, baseNum)) / baseNum
 }
 
 /**
- * 高精度减法
+ * High precision subtraction
  * @export
  */
 export function minus(...nums: any[]) {
@@ -119,7 +119,7 @@ export function minus(...nums: any[]) {
 }
 
 /**
- * 高精度除法
+ * High precision division
  * @export
  */
 export function divide(...nums: any[]) {
@@ -132,7 +132,7 @@ export function divide(...nums: any[]) {
   const num2Changed = float2Fixed(num2)
   checkBoundary(num1Changed)
   checkBoundary(num2Changed)
-  // 重要，这里必须用strip进行修正
+  // Important: must use strip for correction
   return times(
     num1Changed / num2Changed,
     strip(10 ** (digitLength(num2) - digitLength(num1)))
@@ -140,7 +140,7 @@ export function divide(...nums: any[]) {
 }
 
 /**
- * 四舍五入
+ * Round to specified decimal places
  * @export
  */
 export function round(num: number, ratio: number) {
@@ -149,13 +149,13 @@ export function round(num: number, ratio: number) {
   if (num < 0 && result !== 0) {
     result = times(result, -1)
   }
-  // 位数不足则补0
+  // Pad with zeros if needed
   return result
 }
 
 /**
- * 是否进行边界检查，默认开启
- * @param flag 标记开关，true 为开启，false 为关闭，默认为 true
+ * Enable or disable boundary checking, enabled by default
+ * @param flag true to enable, false to disable, default is true
  * @export
  */
 export function enableBoundaryChecking(flag = true) {

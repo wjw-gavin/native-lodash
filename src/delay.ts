@@ -1,7 +1,7 @@
 import { isFunction } from '.'
 
 /**
- * @description 延迟 wait 毫秒后调用 fn。 调用时，任何附加的参数会传给 fn。
+ * @description Invokes fn after wait milliseconds. Any additional arguments are provided to fn when it's invoked.
  */
 
 export function delay(fn: (...args: any[]) => any, wait = 0, ...args: any[]) {

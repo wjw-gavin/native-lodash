@@ -1,5 +1,5 @@
 /**
- * 各类校验方法
+ * Various validation methods
  */
 import type { Numeric } from './types'
 
@@ -7,7 +7,7 @@ export const isDef = <T>(val: T): val is NonNullable<T> =>
   val !== undefined && val !== null
 
 /**
- * 验证电子邮箱格式
+ * Validate email format
  */
 export function isEmail(value: string) {
   return /^\w+((-\w+)|(\.\w+))*@[\dA-Za-z]+(([.-])[\dA-Za-z]+)*\.[\dA-Za-z]+$/.test(
@@ -16,7 +16,7 @@ export function isEmail(value: string) {
 }
 
 /**
- * 验证手机格式
+ * Validate mobile phone number format
  */
 export function isMobile(value: Numeric) {
   const reg = /^1[3-9]\d{9}$/
@@ -24,17 +24,14 @@ export function isMobile(value: Numeric) {
 }
 
 /**
- * 验证字符串
+ * Check if value is a string
  */
-export function isString(str: unknown) {
-  if (str != null && typeof str.valueOf() === 'string') {
-    return true
-  }
-  return false
+export function isString(value: unknown): value is string {
+  return typeof value === 'string' || value instanceof String
 }
 
 /**
- * 验证身份证号码
+ * Validate Chinese ID card number
  */
 export function isIdCard(value: string) {
   return /^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0-2|]\d)|3[01])\d{3}(\d|X)$/.test(
@@ -43,13 +40,13 @@ export function isIdCard(value: string) {
 }
 
 /**
- * 是否车牌号
+ * Check if value is a valid Chinese car plate number
  */
 export function isCarNo(value: string) {
-  // 新能源车牌
+  // New energy vehicle plate
   const xreg =
     /^[A-Z云京使冀吉宁川新晋桂沪津浙渝湘琼甘皖粤苏蒙藏豫贵赣辽鄂闽陕青领鲁黑][A-Z]((\d{5}[DF]$)|([DF][\dA-HJ-NP-Z]\d{4}$))/
-  // 旧车牌
+  // Regular vehicle plate
   const creg =
     /^[A-Z云京使冀吉宁川新晋桂沪津浙渝湘琼甘皖粤苏蒙藏豫贵赣辽鄂闽陕青领鲁黑][A-Z][\dA-HJ-NP-Z]{4}[\dA-HJ-NP-Z学挂港澳警]$/
   if (value.length === 7) {
@@ -62,35 +59,30 @@ export function isCarNo(value: string) {
 }
 
 /**
- * 判断是否为空
+ * Check if value is empty
  */
 export function isEmpty(val: any) {
-  return (
-    val === '' ||
-    (val.constructor === Object && Object.keys(val).length === 0) ||
-    (Array.isArray(val) && val.length === 0)
-  )
+  if (val == null) return true
+  if (val === '') return true
+  if (Array.isArray(val)) return val.length === 0
+  if (typeof val === 'object') return Object.keys(val).length === 0
+  return false
 }
 
 /**
- * 是否数组
+ * Check if value is an array
  */
-export function isArray(value: unknown) {
-  if (typeof Array.isArray === 'function') {
-    return Array.isArray(value)
-  }
-  return Object.prototype.toString.call(value) === '[object Array]'
-}
+export const isArray = Array.isArray
 
 /**
- * 是否对象
+ * Check if value is a plain object
  */
 export function isObject(value: unknown) {
   return Object.prototype.toString.call(value) === '[object Object]'
 }
 
 /**
- * 是否短信验证码
+ * Check if value is a valid SMS verification code
  */
 
 export function isCode(value: string, len = 6) {
@@ -98,24 +90,24 @@ export function isCode(value: string, len = 6) {
 }
 
 /**
- * 是否函数方法
+ * Check if value is a function
  */
 export const isFunction = (fn: unknown): fn is Function =>
   typeof fn === 'function'
 
 /**
- * 是否是布尔 true 或者是字符 'true'
+ * Check if value is boolean true or string 'true'
  */
 export const isTrue = (val: unknown) => val === true || val === 'true'
 
 /**
- * 是否是 URL
+ * Check if value is a valid URL
  */
 export const isURL = (url: string): boolean => {
   return /^((ht|f)tps?):\/\/?/.test(url)
 }
 
 /**
- * 是否在浏览器中
+ * Check if running in browser environment
  */
 export const inBrowser = typeof window !== 'undefined'

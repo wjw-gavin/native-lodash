@@ -1,7 +1,7 @@
 /**
- * @description 使用 SameValueZero 比较两者的值，来确定它们是否相等。
- * @param value 要比较的值
- * @param other 另一个要比较的值
+ * @description Performs a SameValueZero comparison between two values to determine if they are equivalent.
+ * @param value The value to compare
+ * @param other The other value to compare
  */
 
 export function eq(value: unknown, other: unknown) {

@@ -1,5 +1,5 @@
 /**
- * @description 获取当前网页所在的运行环境
+ * @description Get the current browser/app environment
  */
 
 export function getUa():
@@ -14,6 +14,31 @@ export function getUa():
   | undefined {
   const ua = window.navigator.userAgent.toLowerCase()
 
+  /** WeChat Work - must be detected before WeChat */
+  if (/micromessenger/i.test(ua) && /wxwork/i.test(ua)) {
+    return 'wxwork'
+  }
+
+  /** WeChat Mini Program - must be detected before WeChat */
+  if (/micromessenger/i.test(ua) && /miniprogram/i.test(ua)) {
+    return 'wxmini'
+  }
+
+  /** WeChat */
+  if (/micromessenger/i.test(ua)) {
+    return 'wechat'
+  }
+
+  /** DingTalk */
+  if (/dingtalk/i.test(ua)) {
+    return 'dingding'
+  }
+
+  /** Feishu/Lark */
+  if (/lark/i.test(ua)) {
+    return 'feishu'
+  }
+
   /** ios */
   if (/iphone|ipod|ipad/i.test(ua)) {
     return 'ios'
@@ -24,32 +49,7 @@ export function getUa():
     return 'android'
   }
 
-  /** 微信 */
-  if (/micromessenger/i.test(ua)) {
-    return 'wechat'
-  }
-
-  /** 企业微信 */
-  if (/micromessenger/i.test(ua) && /wxwork/i.test(ua)) {
-    return 'wxwork'
-  }
-
-  /** 微信小程序 */
-  if (/micromessenger/i.test(ua) && /miniprogram/i.test(ua)) {
-    return 'wxmini'
-  }
-
-  /** 钉钉 */
-  if (/dingtalk/i.test(ua)) {
-    return 'dingding'
-  }
-
-  /** 飞书 */
-  if (/lark/i.test(ua)) {
-    return 'feishu'
-  }
-
-  /** 移动的 */
+  /** Mobile browser */
   if (/applewebkit.*mobile.*/gi.test(ua)) {
     return 'mobile'
   }

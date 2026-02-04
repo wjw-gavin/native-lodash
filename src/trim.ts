@@ -1,9 +1,9 @@
 export type Pos = 'both' | 'left' | 'right' | 'all'
 
 /**
- * @description 去除空格
- * @param str 需要去除空格的字符串
- * @param pos both (左右) | left | right | all； 默认 both
+ * @description Remove whitespace from string
+ * @param str The string to trim
+ * @param pos Position: both (left and right) | left | right | all; default is 'both'
  */
 
 export function trim(str: string, pos: Pos = 'both') {

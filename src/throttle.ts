@@ -1,5 +1,5 @@
 /**
- * @description 创建一个节流函数，在 wait 秒内最多执行 fn 一次的函数。
+ * @description Creates a throttled function that only invokes fn at most once per every wait milliseconds.
  */
 
 export const throttle = (fn: (...args: any[]) => any, time = 0) => {

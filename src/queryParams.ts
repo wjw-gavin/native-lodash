@@ -3,10 +3,10 @@ import type { TObject } from './types'
 
 type ArrayFormat = 'indices' | 'brackets' | 'repeat' | 'comma'
 /**
- * @description 对象转 url 参数
- * @param data 对象
- * @param isPrefix 是否自动加上'?'
- * @param arrayFormat 规则 indices|brackets|repeat|comma
+ * @description Convert object to URL query parameters
+ * @param data The object to convert
+ * @param isPrefix Whether to add '?' prefix automatically
+ * @param arrayFormat Array format rule: indices|brackets|repeat|comma
  */
 export function queryParams(
   data: TObject = {},
@@ -23,30 +23,30 @@ export function queryParams(
 
     if (!isDef(value)) continue
 
-    // 如果值为数组，另行处理
+    // Handle array values separately
     if (Array.isArray(value)) {
       // e.g. {ids: [1, 2, 3]}
       switch (arrayFormat) {
         case 'indices':
-          // 结果: ids[0]=1&ids[1]=2&ids[2]=3
+          // Result: ids[0]=1&ids[1]=2&ids[2]=3
           for (const [i, element] of value.entries()) {
             _result.push(`${key}[${i}]=${element}`)
           }
           break
         case 'brackets':
-          // 结果: ids[]=1&ids[]=2&ids[]=3
+          // Result: ids[]=1&ids[]=2&ids[]=3
           value.forEach((_value) => {
             _result.push(`${key}[]=${_value}`)
           })
           break
         case 'repeat':
-          // 结果: ids=1&ids=2&ids=3
+          // Result: ids=1&ids=2&ids=3
           value.forEach((_value) => {
             _result.push(`${key}=${_value}`)
           })
           break
         case 'comma':
-          // 结果: ids=1,2,3
+          // Result: ids=1,2,3
           // eslint-disable-next-line no-case-declarations
           let commaStr = ''
           value.forEach((_value) => {

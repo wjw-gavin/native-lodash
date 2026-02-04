@@ -1,8 +1,8 @@
 import type { TObject } from './types'
 
 /**
- * @description 获取 url 中所有参数，并转换为 json 对象
- * @param url 指定url，默认 location.href
+ * @description Get all URL parameters and convert them to a JSON object
+ * @param url The URL to parse, defaults to location.href
  */
 
 export function getUrlAllParams(url?: string) {

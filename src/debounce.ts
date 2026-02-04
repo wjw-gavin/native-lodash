@@ -1,8 +1,8 @@
 /**
- * 创建一个 debounced（防抖动）函数，该函数会从上一次被调用后，延迟 wait 毫秒后调用 fn 方法
- * @param fn 需要防抖的函数
- * @param ms 毫秒数
- * @param immediate 是否立即执行
+ * Creates a debounced function that delays invoking fn until after ms milliseconds have elapsed since the last time the debounced function was invoked
+ * @param fn The function to debounce
+ * @param ms The number of milliseconds to delay
+ * @param immediate Whether to invoke the function on the leading edge
  */
 
 export const debounce = (

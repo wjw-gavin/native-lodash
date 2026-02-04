@@ -1,12 +1,12 @@
 /**
- * @Description: 根据图片地址下载图片
- * @param src  下载图片链接
- * @param title  图片名称
+ * @description Download image by URL
+ * @param src Image URL to download
+ * @param title Image file name
  */
 export function downloadImage(src: string, title?: string) {
   const image = new Image()
 
-  // 解决跨域 Canvas 污染问题
+  // Solve cross-origin Canvas pollution issue
   image.setAttribute('crossOrigin', 'anonymous')
 
   image.addEventListener('load', () => {
@@ -16,7 +16,7 @@ export function downloadImage(src: string, title?: string) {
     const context = canvas.getContext('2d')
     context?.drawImage(image, 0, 0, image.width, image.height)
 
-    // 得到图片的base64编码数据
+    // Get base64 encoded image data
     const url = canvas.toDataURL('image/png')
     const a = document.createElement('a')
     const event = new MouseEvent('click')

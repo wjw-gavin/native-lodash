@@ -2,9 +2,9 @@ import { round } from './utils/digit'
 import type { Numeric } from './types'
 
 /**
- * @description 金额格式化
- * @param number 要格式化的数字
- * @param decimals 保留几位小数
+ * @description Format number as currency with thousand separators
+ * @param number The number to format
+ * @param decimals Number of decimal places to keep
  */
 
 export function moneyFormat(number: Numeric, decimals = 0) {

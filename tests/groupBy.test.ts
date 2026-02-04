@@ -1,6 +1,6 @@
 import { groupBy } from '../src'
 
-test('对象数组根据某个字段分类', () => {
+test('group array of objects by property', () => {
   const arr = [
     {
       id: 1,

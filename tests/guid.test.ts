@@ -1,11 +1,11 @@
 import { guid } from '../src'
 
-describe('全局唯一标识符', () => {
-  test('长度为12', () => {
+describe('guid - globally unique identifier', () => {
+  test('generates specified length', () => {
     expect(guid(12).length === 12).toBeTruthy()
   })
 
-  test('设置首位字母', () => {
+  test('sets first letter', () => {
     expect(guid().slice(0, 1) === 'u').toBeTruthy()
     expect(guid(32, 'g').slice(0, 1) === 'g').toBeTruthy()
   })

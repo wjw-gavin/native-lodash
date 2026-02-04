@@ -3,29 +3,29 @@ import type { Numeric } from './types'
 export type TimeFormatItem = 'y' | 'm' | 'd' | 'h' | 'M' | 's'
 
 /**
- * @description 格式化时间
- * @param dateTime 需要格式化的时间
- * @param format 格式化规则 yyyy:mm:dd|yyyy:mm|yyyy年mm月dd日|yyyy年mm月dd日 hh时MM分等,可自定义组合 默认yyyy-mm-dd
+ * @description Format datetime
+ * @param dateTime The datetime to format
+ * @param format Format pattern (e.g., yyyy-mm-dd, yyyy/mm/dd hh:MM:ss), default is 'yyyy-mm-dd'
  */
 
 export function timeFormat(dateTime: Numeric, format = 'yyyy-mm-dd') {
   let date: Date
 
-  // 若传入时间为假值，则取当前时间
+  // If datetime is falsy, use current time
   if (!dateTime) {
     date = new Date()
   }
 
-  // 若为unix秒时间戳，则转为毫秒时间戳
+  // If unix timestamp in seconds, convert to milliseconds
   else if (/^\d{10}$/.test(dateTime?.toString().trim())) {
     date = new Date(+dateTime * 1000)
   }
 
-  // 若用户传入字符串格式时间戳，new Date无法解析，需做兼容
+  // If user passes string timestamp, new Date cannot parse it, need compatibility
   else if (typeof dateTime === 'string' && /^\d+$/.test(dateTime.trim())) {
     date = new Date(Number(dateTime))
   }
-  // 处理平台性差异，在Safari/Webkit中，new Date仅支持/作为分割符的字符串时间
+  // Handle platform differences, Safari/Webkit only supports '/' as separator in date strings
   else if (
     typeof dateTime === 'string' &&
     dateTime.includes('-') &&
@@ -33,24 +33,24 @@ export function timeFormat(dateTime: Numeric, format = 'yyyy-mm-dd') {
   ) {
     date = new Date(dateTime.replace(/-/g, '/'))
   }
-  // 其他都认为符合 RFC 2822 规范
+  // Otherwise assume it conforms to RFC 2822 specification
   else {
     date = new Date(dateTime)
   }
   const timeSource = {
-    y: date.getFullYear().toString(), // 年
-    m: (date.getMonth() + 1).toString().padStart(2, '0'), // 月
-    d: date.getDate().toString().padStart(2, '0'), // 日
-    h: date.getHours().toString().padStart(2, '0'), // 时
-    M: date.getMinutes().toString().padStart(2, '0'), // 分
-    s: date.getSeconds().toString().padStart(2, '0') // 秒
-    // 有其他格式化字符需求可以继续添加，必须转化成字符串
+    y: date.getFullYear().toString(), // Year
+    m: (date.getMonth() + 1).toString().padStart(2, '0'), // Month
+    d: date.getDate().toString().padStart(2, '0'), // Day
+    h: date.getHours().toString().padStart(2, '0'), // Hour
+    M: date.getMinutes().toString().padStart(2, '0'), // Minute
+    s: date.getSeconds().toString().padStart(2, '0') // Second
+    // Add more format characters as needed, must be converted to string
   }
 
   Object.keys(timeSource).forEach((key) => {
     const [ret] = new RegExp(`${key}+`).exec(format) || []
     if (ret) {
-      // 年可能只需展示两位
+      // Year might only need to show two digits
       const beginIndex = key === 'y' && ret.length === 2 ? 2 : 0
       format = format.replace(
         ret,
