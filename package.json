@@ -39,7 +39,7 @@
     "release": "bumpp --commit --push --tag && npm publish"
   },
   "engines": {
-    "pnpm": ">= 9.15.9"
+    "pnpm": ">= 10.29.3"
   },
   "devDependencies": {
     "@commitlint/cli": "^20.4.1",
