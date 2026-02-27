@@ -10,7 +10,7 @@
     "typescript"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/wjw-gavin/fekt/tree/main/packages/tskit",
+  "homepage": "https://github.com/wjw-gavin/fekt",
   "author": "Gavin",
   "files": [
     "dist"
