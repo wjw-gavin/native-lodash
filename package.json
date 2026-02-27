@@ -1,78 +1,35 @@
 {
-  "name": "native-lodash",
-  "version": "3.0.0",
-  "description": "常用的js工具库",
-  "type": "module",
-  "keywords": [
-    "js",
-    "lodash",
-    "utils",
-    "typescript"
-  ],
-  "license": "MIT",
-  "homepage": "https://github.com/wjw-gavin/native-lodash",
-  "author": "Gavin",
-  "files": [
-    "dist",
-    "*.d.ts"
-  ],
-  "main": "dist/index.cjs",
-  "module": "dist/index.mjs",
-  "types": "index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./index.d.ts",
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs"
-    }
-  },
+  "name": "fekt",
+  "private": true,
   "scripts": {
-    "dev": "pnpm build --watch",
-    "build": "rollup -c",
-    "typecheck": "tsc --noEmit",
-    "test": "vitest",
-    "cz": "czg",
+    "dev": "pnpm -r run dev",
+    "build": "pnpm -r run build",
+    "test": "pnpm -r run test",
+    "typecheck": "pnpm -r run typecheck",
     "clean": "pnpm store prune",
     "lint:staged": "nano-staged",
     "prepare": "husky install",
-    "prepublishOnly": "npm run build",
-    "release": "bumpp --commit --push --tag && npm publish"
-  },
-  "engines": {
-    "pnpm": ">= 10.30.1"
+    "release:tskit": "pnpm -C packages/tskit run release"
   },
   "devDependencies": {
-    "@commitlint/cli": "^20.4.2",
-    "@commitlint/config-conventional": "^20.4.2",
-    "@rollup/plugin-alias": "^6.0.0",
-    "@rollup/plugin-commonjs": "^29.0.0",
-    "@rollup/plugin-json": "^6.1.0",
-    "@rollup/plugin-node-resolve": "^16.0.3",
-    "@rollup/plugin-terser": "^0.4.4",
     "@types/node": "^24.10.13",
     "bumpp": "^10.4.1",
-    "cz-git": "^1.12.0",
-    "esbuild": "^0.27.3",
     "eslint": "^10.0.1",
     "husky": "^9.1.7",
     "jsdom": "^28.1.0",
     "nano-staged": "^0.9.0",
     "prettier": "^3.8.1",
-    "rollup": "^4.58.0",
-    "rollup-plugin-dts": "^6.3.0",
-    "rollup-plugin-esbuild": "^6.2.1",
+    "tsdown": "0.21.0-beta.2",
     "typescript": "^5.9.3",
     "vitest": "^4.0.18"
-  },
-  "config": {
-    "commitizen": {
-      "path": "node_modules/cz-git"
-    }
   },
   "nano-staged": {
     "*.{js,ts,json,md,mjs}": [
       "eslint --fix",
       "prettier --write"
     ]
+  },
+  "engines": {
+    "pnpm": ">= 10"
   }
 }

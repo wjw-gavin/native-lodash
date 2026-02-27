@@ -31,12 +31,12 @@ jobs:
         run: pnpm install
 
       - name: Run test cases
-        run: pnpm run test
+        run: pnpm -r run test
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v5
         with:
-          directory: ./tests/coverage
+          directory: ./packages/tskit/tests/coverage
 
   build:
     runs-on: macos-15
@@ -57,4 +57,4 @@ jobs:
         run: pnpm install
 
       - name: Build
-        run: npm run build
+        run: pnpm -r run build
