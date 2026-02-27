@@ -1,0 +1,42 @@
+{
+  "name": "@fekt/tskit",
+  "version": "3.0.0",
+  "description": "Common JavaScript utility library",
+  "type": "module",
+  "keywords": [
+    "js",
+    "lodash",
+    "utils",
+    "typescript"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/wjw-gavin/fekt/tree/main/packages/tskit",
+  "author": "Gavin",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.mts",
+  "exports": {
+    ".": {
+      "types": {
+        "require": "./dist/index.d.cts",
+        "import": "./dist/index.d.mts"
+      },
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "dev": "tsdown --watch",
+    "build": "tsdown",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest",
+    "prepublishOnly": "npm run build",
+    "release": "bumpp --commit --push --tag && npm publish"
+  }
+}
