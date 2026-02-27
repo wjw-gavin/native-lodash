@@ -45,7 +45,7 @@ pnpm -r run typecheck
 
 1. Fork 本仓库
 2. 创建功能分支 (`git checkout -b feat/amazing-feature`)
-3. 提交更改 (`pnpm cz`)
+3. 提交更改 (`git commit`)
 4. 推送分支 (`git push origin feat/amazing-feature`)
 5. 发起 Pull Request
 

@@ -45,7 +45,7 @@ pnpm -r run typecheck
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feat/amazing-feature`)
-3. Commit your changes (`pnpm cz`)
+3. Commit your changes (`git commit`)
 4. Push to the branch (`git push origin feat/amazing-feature`)
 5. Open a Pull Request
 
