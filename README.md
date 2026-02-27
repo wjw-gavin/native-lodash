@@ -45,7 +45,7 @@ pnpm -r run typecheck
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feat/amazing-feature`)
-3. Commit your changes (`git commit`)
+3. Commit your changes following [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
 4. Push to the branch (`git push origin feat/amazing-feature`)
 5. Open a Pull Request
 
