@@ -28,7 +28,7 @@
     "prettier": "^3.9.4",
     "tsdown": "0.22.3",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.60.1",
+    "typescript-eslint": "^8.62.1",
     "vitest": "^4.1.9"
   },
   "nano-staged": {
