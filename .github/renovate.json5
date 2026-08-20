@@ -3,5 +3,13 @@
   extends: ['config:recommended'],
   rangeStrategy: 'bump',
   dependencyDashboard: false,
-  schedule: ['after 4pm on friday']
+  schedule: ['after 4pm on friday'],
+  packageRules: [
+    {
+      // TS 7.0 ships no compiler API, so typescript-eslint throws on major >= 7.
+      // Lift this once https://github.com/typescript-eslint/typescript-eslint/issues/10940 ships.
+      matchPackageNames: ['typescript'],
+      allowedVersions: '<7'
+    }
+  ]
 }
